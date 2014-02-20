@@ -1,8 +1,5 @@
 ### Quantitative Big Imaging Course
 Here are the lectures, exercises, and additional course materials for the Quantitative Big Imaging. 
-
-If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
-
 ### Lectures
 - 20th February - Introductory Lecture (M. Stampanoni)
  - Lecture (_To be Uploaded_)
