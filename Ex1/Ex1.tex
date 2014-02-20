@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{morefloats}
+\usepackage{longtable,multirow}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                % sets automatic line breaking
+  captionpos=b,                   % sets the caption-position to bottom
+  commentstyle=\color{dkgreen},   % comment style
+  deletekeywords={...},           % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},         % if you want to add LaTeX within your code
+  frame=single,                   % adds a frame around the code
+  keywordstyle=\color{blue},      % keyword style
+  language=Octave,                % the language of the code
+  morekeywords={*,...},           % if you want to add more keywords to the set
+  numbers=left,                   % where to put the line-numbers
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,               % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,         % underline spaces within strings only
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mauve},      % string literal style
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  title=\lstname                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\begin{document}
+
+\title{Exercise 1: Visualizing and Examining}
+
+\section{ImageJ}
+\paragraph{Instructions} Start Fiji and open the sample image "`Cell\_Colony"'. Use the "Image" and "Analyze" menus to modify the images as described below.
+
+\subsection{Threshold}
+Thresholding can be performed at \textit{Image$\rightarrow$Adjust$\rightarrow$Threshold...} How does changing the maximum and minimum value affect the resulting image?\\
+Threshold the image to 120.
+
+\subsection{Analyze image}
+Go to \textit{Analyze$\rightarrow$Set Measurements...} and set "Shape descriptors" and "Integrated density" to be measured. Measure the image by \textit{Analyze$\rightarrow$Measure}. Which region of the image is analyzed? Can you change the region of interest?\\
+\\
+Use \textit{Analyze$\rightarrow$Analyze Particles...} to count all cells which are larger than 19 pixel. What options do you have to display the results, both visually and numerically? How can you transfer these results to other software?
+
+\subsection{Analyzing multiple images}
+Given what you implemented so far, how practical do you think ImageJ is to analyze and compare multiple images? What about displaying images and their features? Is there a way to avoid manually modifying and analyzing the images?
+
+\section{Matlab}
+\paragraph{Instructions} Use the Ex1Starting.m file as a template and make the modifications to the script as directed below.
+\paragraph{Setup} The script was written and tested in MatlabR2012a, but should work on all moderately new versions of Matlab. An important feature is the cell mode (described here: http://blogs.mathworks.com/community/2009/06/08/using-the-cell-mode-toolbar/) which allows just sections of the script to be run. The image processing toolbox ({\it help images}) is used for several of the steps and should be installed. It contains many other useful functions which I recommend looking at. 
+
+\subsection{Threshold}
+The threshold is performed using the following command
+\begin{lstlisting}[language=matlab]
+threshImage=filtImage<120;
+\end{lstlisting}
+What does this command do? Is 120 a good threshold for the system? What might be a good criteria for improving it? Change the line in the script to use a better threshold.
+
+\subsection{Labeling and Counting}
+What do the different colors shown in the label image mean? What is the meaning of the histogram? How can the x and y axes be interpreted?
+
+\subsection{Calculating Average Volume}
+The code below calculates the number of objects and the mean volume, modify it to calculate the standard deviation, minimum, and maximum volume and print it out.
+\begin{lstlisting}[language=matlab]
+volumeDistribution=hist(labelImage(labelImage>0),1:max(labelImage(:)));
+disp(['Number of Cells:' num2str(length(volumeDistribution)) ', Average Volume:' num2str(mean(volumeDistribution))])
+\end{lstlisting}
+ % std(volumeDistribution), min(volumeDistribution), max(volumeDistribution)
+ \paragraph{Extra} How might you select only the 5 largest cells?
+ % [actualVolumes,remapedIndices]=sort(volumeDistribution);keepLabels=remapedIndices(end-5:end); 
+
+\subsection{Comparing Samples}
+Modify the script to look at the following image: 
+\begin{verbatim} http://imagej.nih.gov/ij/images/Cell_Colony2.jpg \end{verbatim} what are the differences? Can you say anything statistically meaningful about these two images?
+\end{document}
