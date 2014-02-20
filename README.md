@@ -5,12 +5,10 @@ If you're using the GitHub for Mac, simply sync your repository and you'll see t
 
 ### Lectures
 - 20th February - Introductory Lecture (M. Stampanoni)
- - Lecture
-  - To be Uploaded 
- - Exercise 
-  - [Exercises 1](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1.pdf?raw=true)
-  - [Exercise Slides](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Slides.html?raw=true)
-  - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Starting.m)
+ - Lecture (_To be Uploaded_)
+ - [Exercises 1](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1.pdf?raw=true)
+ - [Exercise Slides](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Slides.html?raw=true)
+ - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Starting.m)
 - 27th February - Filtering and Image Enhancement (A. Kaestner)
 - 6th March - Basic Segmentation, Discrete Binary Structures
 - 13th March - Advanced Segmentation
