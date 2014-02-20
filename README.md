@@ -4,7 +4,7 @@ Here are the lectures, exercises, and additional course materials for the Quanti
 - 20th February - Introductory Lecture (M. Stampanoni)
  - Lecture (_To be Uploaded_)
  - [Exercises 1](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1.pdf?raw=true)
- - [Exercise Slides](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Slides.html?raw=true)
+ - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex1/Ex1Slides.html)
  - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Starting.m)
 - 27th February - Filtering and Image Enhancement (A. Kaestner)
 - 6th March - Basic Segmentation, Discrete Binary Structures
