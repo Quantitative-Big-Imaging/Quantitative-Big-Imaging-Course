@@ -19,6 +19,8 @@ Here are the lectures, exercises, and additional course materials for the Quanti
 - 22th May - Project Presentations
 
 ### Other Material
+- Course Wiki (For Questions and Answers, discussions etc)
+ - [Main Page](https://github.com/kmader/Quantitative-Big-Imaging-Course/wiki/Course-Wiki-Page)
 - Reprodudible Research Courses
  - [Course and Tools in R](http://kbroman.github.io/Tools4RR/)
  - [Coursera Course](https://www.coursera.org/course/repdata)
