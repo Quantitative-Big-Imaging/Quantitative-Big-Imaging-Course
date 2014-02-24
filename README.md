@@ -2,7 +2,7 @@
 Here are the lectures, exercises, and additional course materials for the Quantitative Big Imaging. 
 ### Lectures
 - 20th February - Introductory Lecture (M. Stampanoni)
- - Lecture (_To be Uploaded_)
+ - [Lecture Slides](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Lectures/01-Introduction.pdf?raw=true)
  - [Exercises 1](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1.pdf?raw=true)
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex1/Ex1Slides.html)
  - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Starting.m)
