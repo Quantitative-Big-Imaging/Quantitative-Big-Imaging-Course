@@ -6,7 +6,7 @@ Here are the lectures, exercises, and additional course materials for the Quanti
  - [Exercises 1](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1.pdf?raw=true)
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex1/Ex1Slides.html)
  - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Starting.m)
-- 27th February - Filtering and Image Enhancement (A. Kaestner)
+- 27th February - Filtering and Image Enhancement (A. Kaestner, _held in HG E26.3!_)
  - [Lecture Slides](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Lectures/02-Enhanced.pdf?raw=true)
  - Exercises (To be uploaded)
  - Starting Matlab Script (To be uploaded)
