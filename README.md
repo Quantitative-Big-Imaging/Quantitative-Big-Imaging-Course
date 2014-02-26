@@ -21,6 +21,10 @@ Here are the lectures, exercises, and additional course materials for the Quanti
 ### Other Material
 - Course Wiki (For Questions and Answers, discussions etc)
  - [Main Page](https://github.com/kmader/Quantitative-Big-Imaging-Course/wiki/Course-Wiki-Page)
+- Performance Computing Courses
+ - [High Performance Computing for Science and Engineering (HPCSE) I](http://cse-lab.ethz.ch/index.php/teaching/42-teaching/classes/577-hpcsei)
+ - [Introduction to GPU Programming](http://cse-lab.ethz.ch/index.php/teaching/42-teaching/classes/576-etvgpufall2013)
+ - [Programming Massively Parallel Processors with CUDA](https://itunes.apple.com/us/itunes-u/programming-massively-parallel/id384233322?mt=10)
 - Reprodudible Research Courses
  - [Course and Tools in R](http://kbroman.github.io/Tools4RR/)
  - [Coursera Course](https://www.coursera.org/course/repdata)
