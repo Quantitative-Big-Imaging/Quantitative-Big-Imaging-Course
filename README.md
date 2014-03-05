@@ -11,6 +11,9 @@ Here are the lectures, exercises, and additional course materials for the Quanti
  - [Exercises](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex2/Exercises_ImageEnhancement.pdf?raw=true)
  - [Starting Matlab Directory](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex2/matlab.zip?raw=true)
 - 6th March - Basic Segmentation, Discrete Binary Structures
+ - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/03-Segmentation.html)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/Segmentation_files/printable.html)
+ - Exercises will be uploaded tomorrow
 - 13th March - Advanced Segmentation
 - 20th March - Analyzing Single Objects
 - 27th March -  Analyzing Complex Objects
