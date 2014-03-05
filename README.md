@@ -25,8 +25,8 @@ Here are the lectures, exercises, and additional course materials for the Quanti
 - 22th May - Project Presentations
 
 ### Feedback
-<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dEtIX1ZXMzFacmdhRF9mQVpNaWtWTXc6MA" width="760" height="1037" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
+ - Provide anonymous feedback on course [here](https://docs.google.com/spreadsheet/embeddedform?formkey=dEtIX1ZXMzFacmdhRF9mQVpNaWtWTXc6MA)
+ - Or send direct (less anonymous feedback) directly to [Kevin](mailto:mader@biomed.ee.ethz.ch)
 ### Other Material
 - Course Wiki (For Questions and Answers, discussions etc)
  - [Main Page](https://github.com/kmader/Quantitative-Big-Imaging-Course/wiki/Course-Wiki-Page)
