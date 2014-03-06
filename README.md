@@ -20,10 +20,9 @@ Here are the lectures, exercises, and additional course materials for the Quanti
 
 ### Exercises
 
-The exercises are based on the lectures and take place in the same room after the lecture completes.
- - [QBI Install](http://people.ee.ethz.ch/~maderk/qbi.zip) is required for starting the exercises and contains Fiji along with a few test datasets
- 
- - 20th February - Introductory Lecture (M. Stampanoni)
+The exercises are based on the lectures and take place in the same room after the lecture completes. [QBI Install](http://people.ee.ethz.ch/~maderk/qbi.zip) is required for starting the exercises and contains Fiji along with a few test datasets
+
+- 20th February - Introductory Lecture (M. Stampanoni)
  - [Exercises 1](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1.pdf?raw=true)
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex1/Ex1Slides.html)
  - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1Starting.m)
