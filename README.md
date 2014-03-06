@@ -15,6 +15,8 @@ Here are the lectures, exercises, and additional course materials for the Quanti
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/Segmentation_files/printable.html)
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex3/Ex3Slides.html)
  - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex3/Ex3Starting.m)
+ - [Data Files](http://people.ee.ethz.ch/~maderk/data.zip)
+ - [QBI Install](http://people.ee.ethz.ch/~maderk/qbi.zip)
 - 13th March - Advanced Segmentation
 - 20th March - Analyzing Single Objects
 - 27th March -  Analyzing Complex Objects
