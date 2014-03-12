@@ -54,6 +54,9 @@ The exercises are based on the lectures and take place in the same room after th
  - Or send direct email (slightly less anonymous feedback) to [Kevin](mailto:mader@biomed.ee.ethz.ch)
 
 ### Other Material
+- Project Signup
+ - [List](https://docs.google.com/spreadsheet/ccc?key=0AnOOBjdH2wMXdFNzVUNEUUc1WG1Cb21Gb24xZnQ5dWc&usp=sharing)
+ - Here you signup for your project with team members and a short title and description
 - Course Wiki (For Questions and Answers, discussions etc)
  - [Main Page](https://github.com/kmader/Quantitative-Big-Imaging-Course/wiki/Course-Wiki-Page)
 - Performance Computing Courses
