@@ -21,8 +21,12 @@ Here are the lectures, exercises, and additional course materials for the Quanti
 - 22th May - Project Presentations
 
 ### Exercises
+#### General Information
+The exercises are based on the lectures and take place in the same room after the lecture completes. 
+- For the first 3 exercises, [QBI Install](http://people.ee.ethz.ch/~maderk/qbi.zip) is required for starting the exercises and contains Fiji along with a few test datasets.
+- For the subsequent exercies, the [script](https://gist.github.com/kmader/9503137#file-download-and-setup) can be run inside Matlab
 
-The exercises are based on the lectures and take place in the same room after the lecture completes. [QBI Install](http://people.ee.ethz.ch/~maderk/qbi.zip) is required for starting the exercises and contains Fiji along with a few test datasets
+#### Specific Assignements
 
 - 20th February - Introductory Lecture (M. Stampanoni)
  - [Exercises 1](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex1/Ex1.pdf?raw=true)
@@ -55,8 +59,8 @@ The exercises are based on the lectures and take place in the same room after th
 
 ### Other Material
 - Project Signup
- - [List](https://docs.google.com/spreadsheet/ccc?key=0AnOOBjdH2wMXdFNzVUNEUUc1WG1Cb21Gb24xZnQ5dWc&usp=sharing)
  - Here you signup for your project with team members and a short title and description
+ - [List](https://docs.google.com/spreadsheet/ccc?key=0AnOOBjdH2wMXdFNzVUNEUUc1WG1Cb21Gb24xZnQ5dWc&usp=sharing)
 - Course Wiki (For Questions and Answers, discussions etc)
  - [Main Page](https://github.com/kmader/Quantitative-Big-Imaging-Course/wiki/Course-Wiki-Page)
 - Performance Computing Courses
