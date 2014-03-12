@@ -814,7 +814,7 @@ hljs.initHighlightingOnLoad();
 <li>FIJI (ImageJ with all the plugins already installed): Visualization, Preprocessing, Segmentation, Morphometrics [<a href="http://www.fiji.sc">http://www.fiji.sc</a>]</li>
 <li>Matlab (General Processing, Image Processing Toolbox)
 [<a href="http://www.mathworks.com">http://www.mathworks.com</a>]</li>
-<li>MIJI</li>
+<li>MIJI (Interface betweeen Matlab and ImageJ) [<a href="http://bigwww.epfl.ch/sage/soft/mij/">http://bigwww.epfl.ch/sage/soft/mij/</a>]</li>
 </ul></li>
 </ul>
 
@@ -853,7 +853,7 @@ hljs.initHighlightingOnLoad();
 <h3>Setting up the Computers</h3>
 <div class="slideContent" >
 <p>In Matlab run the following code
-<a href="https://gist.github.com/kmader/9503137">Copy / Paste from Here</a></p>
+<a href="https://gist.github.com/kmader/9503137#file-download-and-setup">Copy / Paste from Here</a></p>
 
 <pre><code class="matlab">cd(&#39;~&#39;)
 unzip(&#39;http://jenkins.imagej.net/job/Stable-Fiji/lastSuccessfulBuild/artifact/fiji-nojre.zip&#39;,&#39;./&#39;)
@@ -910,7 +910,7 @@ imagesc(imSum&lt;150)
 <h3>Cell Exercise</h3>
 <div class="column column1 slideContent" >
 <p><small>
-Use the new script <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex4/image_generator.m">image_generator.m</a> to generate images with varying number of cells(5-1000) illumination (0.5-2) and noise (0-2)</p>
+Download the function and save it in your home directory <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex4/image_generator.m">image_generator.m</a> to generate images with varying number of cells(5-1000) illumination (0.5-2) and noise (0-2)</p>
 
 <ul>
 <li>Perform a threshold</li>
@@ -968,7 +968,7 @@ MIJ.createImage(&#39;testCellImage1&#39;,curCellIm,true);
 <section data-transition="linear" data-transition-speed="default">
 <h3>K-Means Exercise</h3>
 <div class="slideContent" >
-<p>We start with the color image of embryos but instead of summing all channels we keep them to use in K-Means analysis. The following code runs k-means on the image for 3 groups.</p>
+<p>We start with the color image of embryos but instead of summing all channels we keep them to use in K-Means analysis. The following <a href="https://gist.github.com/kmader/9503137#file-run-k-means">code</a> runs k-means on the image for 3 groups.</p>
 
 <pre><code class="matlab">MIJ.run(&#39;Embryos (42K)&#39;);
 imData = double(MIJ.getCurrentImage);
