@@ -794,10 +794,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>Quantitative Big Imaging  </h1><p>Kevin Mader (mader@biomed.ee.ethz.ch)<br/>6 March 2014</p>
+<h1>Quantitative Big Imaging  </h1><p>Kevin Mader (mader@biomed.ee.ethz.ch)<br/>13 March 2014</p>
 
 <div class="slideContent" >
-<h2>Basic Segmentation and Discrete Binary Structures</h2>
+<h2>Advanced Segmentation and Component Labeling</h2>
 
 <h3>Exercises</h3>
 
@@ -814,14 +814,23 @@ hljs.initHighlightingOnLoad();
 <li>FIJI (ImageJ with all the plugins already installed): Visualization, Preprocessing, Segmentation, Morphometrics [<a href="http://www.fiji.sc">http://www.fiji.sc</a>]</li>
 <li>Matlab (General Processing, Image Processing Toolbox)
 [<a href="http://www.mathworks.com">http://www.mathworks.com</a>]</li>
-</ul></li>
-<li>Advanced Tools
-
-<ul>
-<li>Paraview</li>
-<li>ImageJ Plugins (Java and Python)</li>
+<li>MIJI</li>
 </ul></li>
 </ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Objectives</h3>
+<div class="slideContent" >
+<ol>
+<li>Move images easily between Matlab and FIJI for different post-processing steps</li>
+<li>Use a tool to simulate data so analysis methods can be tested and verified</li>
+<li>Implement automatic thresholding routine</li>
+<li>Understand limitations of segmenting and thresholding on real data</li>
+<li>Apply K-Means to Color Image Data</li>
+</ol>
 
 </div>
 
@@ -869,34 +878,30 @@ cd(&#39;~&#39;)
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>MIJ (MIJ)</h3>
-<div class="column column1 slideContent" >
-<h4>Tools provide an interface between Matlab and FIJI</h4>
+<div class="slideContent" >
+<h4><a href="http://fiji.sc/Miji">Tools</a> provide an interface between Matlab and FIJI</h4>
 
-<p><a href="http://fiji.sc/Miji">More Info</a></p>
+<p><small>
+Pushing Matlab Images to ImageJ</p>
 
-<p>Pushing Matlab Images to ImageJ</p>
-
-<pre><code class="matlab">imData=rand(500); % random 500 x 500 array
+<pre><code class="matlab">% random 500 x 500 array
+imData=rand(500); 
 MIJ.createImage(&#39;test&#39;,imData,true);
 </code></pre>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
 
 <p>Reading Images from FIJI to Matlab</p>
 
 <pre><code class="matlab">MIJ.run(&#39;Embryos (42K)&#39;);
 imData = MIJ.getCurrentImage;
 % take the sum of red, green, and blue
-imSum = double(imData(:,:,1))+double(imData(:,:,2))+double(imData(:,:,3)); 
+imSum = sum(double(imData(:,:,1)),3); 
 subplot(1,2,1)
 imagesc(imSum);
 subplot(1,2,2);
 imagesc(imSum&lt;150)
 </code></pre>
+
+<p></small></p>
 
 </div>
 
@@ -905,7 +910,7 @@ imagesc(imSum&lt;150)
 <h3>Cell Exercise</h3>
 <div class="column column1 slideContent" >
 <p><small>
-Use the new script image_generator.m to generate images with varying number of cells(5-1000) illumination (0.5-2) and noise (0-2)</p>
+Use the new script <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex4/image_generator.m">image_generator.m</a> to generate images with varying number of cells(5-1000) illumination (0.5-2) and noise (0-2)</p>
 
 <ul>
 <li>Perform a threshold</li>
@@ -956,6 +961,39 @@ Use the new script image_generator.m to generate images with varying number of c
 <pre><code class="matlab">curCellIm=image_generator(100,0,255);
 MIJ.createImage(&#39;testCellImage1&#39;,curCellIm,true);
 </code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>K-Means Exercise</h3>
+<div class="slideContent" >
+<p>We start with the color image of embryos but instead of summing all channels we keep them to use in K-Means analysis. The following code runs k-means on the image for 3 groups.</p>
+
+<pre><code class="matlab">MIJ.run(&#39;Embryos (42K)&#39;);
+imData = double(MIJ.getCurrentImage);
+% raster scan image to 3 , 1D arrays 
+imList=reshape(imData,[],3); 
+%peform k-means
+[groupList,centers]=kmeans(imList,3);
+% reshape into an image
+groupIm=reshape(groupList,size(imData,1),size(imData,2));
+imagesc(groupIm);
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>K-Means Exercise</h3>
+<div class="slideContent" >
+<p>Modify the code so it works with 5 groups, does this make sense? </p>
+
+<p>Modify the code so the red channel (:,:,1) is valued twice as much as the other (green and blue channels)</p>
+
+<p>Modify the code so each channel is normalized to its own variance. </p>
+
+<p>Which produces the best results? </p>
 
 </div>
 
