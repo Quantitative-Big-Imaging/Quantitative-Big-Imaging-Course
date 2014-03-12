@@ -998,6 +998,32 @@ imagesc(groupIm);
 </div>
 
 </section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>3D Exercise (Advanced)</h3>
+<div class="slideContent" >
+<pre><code class="matlab">% load the sample image
+MIJ.run(&#39;Confocal Series (2.2MB)&#39;);
+stackImage = double(MIJ.getCurrentImage);
+% show a slice
+imagesc(stackImage(:,:,25));pause(2);
+% show a histogram of the image
+hist(stackImage(stackImage&gt;0));pause(2);
+% create slices
+xv=yv=[1,200,400];
+zv=[1,25,50];
+slice(stackImage,xv,yv,zv);
+% create isosurface
+isosurface(stackImage,100);pause(2);
+</code></pre>
+
+<ol>
+<li>Show an isosurface for just a region of interest in the image (the first 20 slices)</li>
+<li>What does an isosurface represent? How is it similar to a threshold?</li>
+</ol>
+
+</div>
+
+</section>
 
 
   </div>
