@@ -9,6 +9,8 @@ Here are the lectures, exercises, and additional course materials for the Quanti
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/03-Segmentation.html)
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/Segmentation_files/printable.html)
 - 13th March - Advanced Segmentation
+ - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation.html)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation_files/printable.html)
 - 20th March - Analyzing Single Objects
 - 27th March -  Analyzing Complex Objects
 - 3rd April -  Spatial Distribution
@@ -33,7 +35,10 @@ The exercises are based on the lectures and take place in the same room after th
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex3/Ex3Slides.html)
  - [Starting Matlab Script](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex3/Ex3Starting.m)
  - [Data Files](http://people.ee.ethz.ch/~maderk/data.zip)
-- 13th March - Advanced Segmentation
+- 13th March - Advanced Segmentation and Processing
+ - [Lecture Quiz](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation_files/quiz.html)
+ - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex4/Ex4Slides.html)
+ - [Matlab Image Generator](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex4/image_generator.m)
 - 20th March - Analyzing Single Objects
 - 27th March -  Analyzing Complex Objects
 - 3rd April -  Spatial Distribution

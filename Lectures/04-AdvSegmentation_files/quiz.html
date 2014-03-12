@@ -318,6 +318,10 @@ While automatic techniques might make results more reliable in 4, difficult segm
     
 <p>Explain how the IsoData method works for finding a threshold. To what kind of images to you think it would apply well?</p>
 
+<h3>Hint</h3>
+
+<p>It is not in the lecture, you need to search online a bit.</p>
+
 
 <textarea rows="5" style="width:95%" class='submitCompare'
   placeholder='Type your answer (at least 140 characters)'>
@@ -327,10 +331,6 @@ While automatic techniques might make results more reliable in 4, difficult segm
 </a>
 <a class='btn btn-danger clearSubmitCompare'>Clear</a>
 
-<div class='hint' style='display: none;'>
-  <p>It is not in the lectures you need to search online.</p>
-
-</div>
 <div class='explanation' style='display: none;'>
   <p>IsoData works by picking a threshold \(G\) and applying it to the image. The image is then divided into two groups \(A\) is all points \(\geq G\) and \(B\) is all points \(\leq G\). The average intensity value is calculated in \(A\) and \(B\) and a new \(G = \frac{\mu_A+\mu_B}{2}\). 
 The method would work well for images with varying illumination or other issues and is in many cases more robust than intermodes since it does not require a smoothing step.</p>
