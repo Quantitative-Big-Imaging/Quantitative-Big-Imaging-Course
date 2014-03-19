@@ -12,7 +12,7 @@ Here are the lectures, exercises, and additional course materials for the Quanti
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation.html)
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation_files/printable.html)
 - 20th March - Analyzing Single Objects
- - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-AdvSegmentation.html)
+ - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis.html)
 - 27th March -  Analyzing Complex Objects
 - 3rd April -  Spatial Distribution
 - 10th April -  Statistics and Reproducibility
