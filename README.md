@@ -1,5 +1,7 @@
 ### Quantitative Big Imaging Course
-Here are the lectures, exercises, and additional course materials for the Quantitative Big Imaging. 
+Here are the lectures, exercises, and additional course materials corresponding to the spring semester 2014 course at ETH Zurich, 227-0966-00L: Quantitative Big Imaging. 
+The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco Stampanoni, and Maria Büchner.
+
 ### Lectures
 - 20th February - Introductory Lecture (M. Stampanoni)
  - [Lecture Slides](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Lectures/01-Introduction.pdf?raw=true)
