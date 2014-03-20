@@ -1010,6 +1010,36 @@ imagesc(imSum&lt;150)
 
 </section>
 <section data-transition="default" data-transition-speed="default">
+<h3>Creating an Isosurface in FIJI</h3>
+<div class="slideContent" >
+<p><strong>You need to have Java3D installed so it will not work on the tardis (computer lab) machines, but it should work on your personal computer</strong></p>
+
+<ol>
+<li>Load a 3D image in FIJI (File -&gt; Open Samples -&gt; MRI Stack in case you don&#39;t have your own)</li>
+<li>Perform a threshold</li>
+<li>Create the surface using the <em>Create Surfaces</em> <a href="http://132.187.25.13/ij3d/?page=Create_Surfaces&amp;category=Extensions">plugin</a>
+
+<ul>
+<li>Run the plug-in using the &ldquo;Plugins -&gt; Segmentation -&gt; Create Surfaces&rdquo;</li>
+</ul></li>
+<li>The meshes will be created and displayed in a 3D Viewer Window</li>
+<li>You can export the meshes by &ldquo;File -&gt; Export Surfaces&rdquo;</li>
+</ol>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Advanced: Creating an Isosurface / Mesh in Paraview</h3>
+<div class="slideContent" >
+<p><a href="https://gist.github.com/kmader/9666557">Source Scripts</a> </p>
+
+<p>The following python script / Paraview state file (they perform the same task but one is more of a macro while the other is a saved state file) show how to use the &ldquo;Threshold&rdquo; and &ldquo;Extract Surface&rdquo; commands to get meshes from voxel data.</p>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
 <h3>Advanced: 3D Shape Analysis in FIJI</h3>
 <div class="slideContent" >
 <p>FIJI has a more advcaned built in &ldquo;3D Object Counter&rdquo; in the <em>Analyze_\( \rightarrow \) _3D Object Counter</em> menu. It has a number of options built into the function itself, it also has an option item (<em>3D OC Options</em>) where even more parameters can be adjusted</p>
