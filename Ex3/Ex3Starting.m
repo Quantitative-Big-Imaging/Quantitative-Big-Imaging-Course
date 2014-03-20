@@ -50,14 +50,22 @@ pause(1)
 volumeDistribution=hist(labelImage(labelImage>0),1:max(labelImage(:)));
 disp(['Number of Cells:' num2str(length(volumeDistribution)) ', Average Volume:' num2str(mean(volumeDistribution))])    
 
+
 %% Robust threshold selection
+
+% the goal of this is to get the curve to be as flat as possible (insensitive to threshold value)
+% by filtering and performing morphological operations well
+
+% use the appropriate filter command for the image
+filtImage = ??? 
 threshValues=[min(filtImage(:)):max(filtImage(:))];
 objectCount=zeros(1,length(threshValues));
 objectVolume=zeros(1,length(threshValues));
 
 for cStep=1:length(threshValues)
     threshImage=filtImage<threshValues(cStep);
-    cleanImage=threshImage;
+    % perform appropriate cleaning operations
+    cleanImage= ??? ;
     labelImage=bwlabel(cleanImage);
     volumeDistribution=hist(labelImage(labelImage>0),1:max(labelImage(:)));
     objectCount(cStep)=length(volumeDistribution);

@@ -977,34 +977,25 @@ imagesc(imSum&lt;150)
 
 </section>
 <section data-transition="default" data-transition-speed="default">
-<h3>Creating an Isosurface in Matlab</h3>
+<h3>Challenge: Writing your own shape analysis script</h3>
 <div class="slideContent" >
-<pre><code class="matlab">% load the sample image
-MIJ.run(&#39;Confocal Series (2.2MB)&#39;);
-stackImage = double(MIJ.getCurrentImage);
-% show a slice
-imagesc(stackImage(:,:,25));pause(2);
-% show a histogram of the image
-hist(stackImage(stackImage&gt;0));pause(2);
-% create slices
-xv=yv=[1,200,400];
-zv=[1,25,50];
-slice(stackImage,xv,yv,zv);
-set(findobj(gca,&#39;Type&#39;,&#39;Surface&#39;),&#39;EdgeColor&#39;,&#39;none&#39;)
-% create isosurface
-isosurface(stackImage,100);pause(2);
-</code></pre>
-
-<ol>
-<li>Show an isosurface for just a region of interest in the image (the first 20 slices)</li>
-<li>What does an isosurface represent? Estimate how much more memory is used than for displaying all the slices</li>
-</ol>
+<p>Using the following <a href="https://gist.github.com/kmader/9659038">code</a> as a starting point, can you write your own function to perform the shape analysis within Matlab.</p>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="default">
-<h3>Advanced: Shape Analysis in FIJI</h3>
+<h3>Creating an Isosurface in Matlab</h3>
+<div class="slideContent" >
+<p><a href="https://gist.github.com/kmader/9659197">Starting Code</a>
+1. Show an isosurface for just a region of interest in the image (the first 20 slices)
+1. What does an isosurface represent? Estimate how much more memory is used than for displaying all the slices</p>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Advanced: 3D Shape Analysis in FIJI</h3>
 <div class="slideContent" >
 <p>FIJI has a more advcaned built in &ldquo;3D Object Counter&rdquo; in the <em>Analyze_\( \rightarrow \) _3D Object Counter</em> menu. It has a number of options built into the function itself, it also has an option item (<em>3D OC Options</em>) where even more parameters can be adjusted</p>
 
