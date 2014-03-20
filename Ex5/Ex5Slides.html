@@ -943,13 +943,15 @@ imagesc(imSum&lt;150)
 <li>Compare the shape analysis to the original results</li>
 </ol>
 
+<p><a href="https://gist.github.com/kmader/9638236">Starting Script</a></p>
+
 
 </div>
 
 <div class="column column2 slideContent" >
 
 
-<p><a href="https://gist.github.com/kmader/9638236">Starting Script</a></p>
+<p><small></p>
 
 <h3>Volume</h3>
 
@@ -970,8 +972,10 @@ imagesc(imSum&lt;150)
 
 <ul>
 <li>How does the angle of the primary axis given as input compare to the computed angle?</li>
-<li>Run the simulation with \( cell_radius_std=0 \) how does the angle compare now? Why?</li>
+<li>Run the simulation with <code>cell_radius_std=0</code> how does the angle compare now? Why?</li>
 </ul>
+
+<p></small></p>
 
 </div>
 
@@ -981,15 +985,26 @@ imagesc(imSum&lt;150)
 <div class="slideContent" >
 <p>Using the following <a href="https://gist.github.com/kmader/9659038">code</a> as a starting point, can you write your own function to perform the shape analysis within Matlab.</p>
 
+<ol>
+<li>Add a column for anisotropy</li>
+<li>Add a column for oblateness</li>
+<li>Testing is important use a test image to make sure your function is working correctly (an easy starting point is <code>diag(1:20)</code>)</li>
+</ol>
+
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="default">
 <h3>Creating an Isosurface in Matlab</h3>
 <div class="slideContent" >
-<p><a href="https://gist.github.com/kmader/9659197">Starting Code</a>
-1. Show an isosurface for just a region of interest in the image (the first 20 slices)
-1. What does an isosurface represent? Estimate how much more memory is used than for displaying all the slices</p>
+<p><a href="https://gist.github.com/kmader/9659197">Starting Code</a></p>
+
+<ol>
+<li>Show an isosurface for just a region of interest in the image</li>
+<li>What does an isosurface represent? Estimate how much more memory is used than for displaying all the slices</li>
+<li>Change the value from 100 in the script, what happens? How is this different from thresholding</li>
+<li>Try on other 3D images</li>
+</ol>
 
 </div>
 
