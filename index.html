@@ -3,36 +3,54 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta name="viewport" content="width=640" />
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
 
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
     <title>Quantitative-big-imaging-course by kmader</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>Quantitative-big-imaging-course</h1>
-        <h2>The overview and course material for the quantitative big imaging course</h2>
-        <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+    <a id="forkme_banner" href="https://github.com/kmader/Quantitative-Big-Imaging-Course">View on GitHub</a>
+    <div class="shell">
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Quantitative-big-imaging-course</h1>
+            <h2>The overview and course material for the quantitative big imaging course</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h3>
 <a name="quantitative-big-imaging-course" class="anchor" href="#quantitative-big-imaging-course"><span class="octicon octicon-link"></span></a>Quantitative Big Imaging Course</h3>
 
 <p>Here are the lectures, exercises, and additional course materials corresponding to the spring semester 2014 course at ETH Zurich, 227-0966-00L: Quantitative Big Imaging. 
-The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco Stampanoni, and Maria Büchner.</p>
+The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco Stampanoni, and Maria Büchner. Please note the Lecture Slides and PDF do not contain source code, this is only available in the handout.</p>
 
 <h3>
 <a name="lectures" class="anchor" href="#lectures"><span class="octicon octicon-link"></span></a>Lectures</h3>
@@ -54,21 +72,27 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
 
 <ul>
 <li><a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/03-Segmentation.html">Lecture Slides</a></li>
-<li><a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/Segmentation_files/printable.html">Lecture Handout</a></li>
+<li>
+<a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/Segmentation_files/printable.html">Lecture Handout</a> as <a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/03-Segmentation.pdf">PDF</a>
+</li>
 </ul>
 </li>
 <li>13th March - Advanced Segmentation
 
 <ul>
 <li><a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation.html">Lecture Slides</a></li>
-<li><a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation_files/printable.html">Lecture Handout</a></li>
+<li>
+<a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation_files/printable.html">Lecture Handout</a> as <a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation.pdf">PDF</a>
+</li>
 </ul>
 </li>
 <li>20th March - Analyzing Single Objects
 
 <ul>
 <li><a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis.html">Lecture Slides</a></li>
-<li><a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis_files/printable.html">Lecture Handout</a></li>
+<li>
+<a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis_files/printable.html">Lecture Handout</a> as <a href="https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis.pdf">PDF</a>
+</li>
 </ul>
 </li>
 <li>27th March -  Analyzing Complex Objects</li>
@@ -179,26 +203,23 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
 </ul>
 </li>
 </ul>
-        </section>
+      </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/kmader">kmader</a> can be found on <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
 
-          <p class="repo-owner"><a href="https://github.com/kmader/Quantitative-Big-Imaging-Course"></a> is maintained by <a href="https://github.com/kmader">kmader</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
     </div>
 
-            <script type="text/javascript">
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
