@@ -1,6 +1,6 @@
 ### Quantitative Big Imaging Course
 Here are the lectures, exercises, and additional course materials corresponding to the spring semester 2014 course at ETH Zurich, 227-0966-00L: Quantitative Big Imaging. 
-The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco Stampanoni, and Maria Büchner.
+The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco Stampanoni, and Maria Büchner. Please note the Lecture Slides and PDF do not contain source code, this is only available in the handout.
 
 ### Lectures
 - 20th February - Introductory Lecture (M. Stampanoni)
@@ -9,13 +9,13 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
  - [Lecture Slides](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Lectures/02-Enhanced.pdf?raw=true)
 - 6th March - Basic Segmentation, Discrete Binary Structures
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/03-Segmentation.html)
- - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/Segmentation_files/printable.html)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/Segmentation_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/03-Segmentation.pdf)
 - 13th March - Advanced Segmentation
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation.html)
- - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation_files/printable.html)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/04-AdvSegmentation.pdf)
 - 20th March - Analyzing Single Objects
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis.html)
- - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis_files/printable.html)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis.pdf)
 - 27th March -  Analyzing Complex Objects
 - 3rd April -  Spatial Distribution
 - 10th April -  Statistics and Reproducibility
