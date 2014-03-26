@@ -930,6 +930,12 @@ imagesc(imSum&lt;150)
 <li>not all features are supported so be careful</li>
 </ul>
 
+<ol>
+<li>You can run a Macro again by going to <em>New</em> \( \rightarrow \) _Script, pasting the code in</li>
+<li>Set the <em>Language</em> \( \rightarrow \) to <em>ImageJ Macro</em></li>
+<li><em>Run</em></li>
+</ol>
+
 
 </div>
 
@@ -977,7 +983,8 @@ imagesc(imSum&lt;150)
 
 <h3>Ovals Marco</h3>
 
-<pre><code>newImage(&quot;Untitled&quot;, &quot;8-bit white&quot;, 2000, 2000, 1);
+<pre><code>setBackgroundColor(0,0,0)
+newImage(&quot;Untitled&quot;, &quot;8-bit white&quot;, 2000, 2000, 1);
 run(&quot;Invert&quot;);
 makeOval(252, 177, 240, 240);
 setBackgroundColor(0, 0, 0);
@@ -992,6 +999,50 @@ makeOval(1236, 1191, 642, 741);
 run(&quot;Invert&quot;);
 run(&quot;Select None&quot;);
 </code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>FIJI: Skeletonization</h3>
+<div class="column column1 slideContent" >
+<p>Two options</p>
+
+<ol>
+<li><em>Plugins</em> \( \rightarrow \) <em>Skeleton</em> \( \rightarrow \) <em>Skeletonize (2D/3D)&hellip;</em>
+
+<ul>
+<li>A thinning based approach not covered in the class but potentially useful for some applications</li>
+</ul></li>
+<li><em>Analyze</em> \( \rightarrow \) <em>Local Thickness</em> \( \rightarrow \)
+
+<ul>
+<li><em>Geometry to Distance Map</em> creates the distance map itself</li>
+<li><em>Distance Map to Distance Ridge</em> creates the ridge (or local maximum values from the distance map)</li>
+</ul></li>
+</ol>
+
+<h3>Macro Commands</h3>
+
+<pre><code>run(&quot;Geometry to Distance Map&quot;, &quot;threshold=1&quot;);
+run(&quot;Distance Map to Distance Ridge&quot;);
+</code></pre>
+
+
+</div>
+
+<div class="column column2 slideContent" >
+
+
+<ol>
+<li>Try both approaches using the test or your own image and comment on which works better. How might you improve the distance map based method</li>
+<li>Use Matlab to analyze the structures from both. The script assumes a 1 voxel thick skeleton. <a href="https://gist.github.com/kmader/9783822">Starting Script</a>
+(The final output is a color map showing terminal points (\( =1 \)), connecting lines (\( =2 \)), and junctions (\( =3 \)))</li>
+</ol>
+
+<h3>Simple Test Image</h3>
+
+<p><a href="https://gist.github.com/kmader/9783899">ImageJ Macro</a> or make your own</p>
 
 </div>
 
@@ -1047,31 +1098,6 @@ http://people.ee.ethz.ch/~maderk/qbi/PivoData.zip
 
 </section>
 <section data-transition="default" data-transition-speed="default">
-<h3>FIJI: Computing Curvature</h3>
-<div class="slideContent" >
-<p><a href="http://en.wikipedia.org/wiki/Mean_curvature">Curvature definitions</a></p>
-
-<pre><code class="matlab">MIJ.run(&#39;Compute Curvatures&#39;, &#39;compute sigma=0.5000 use order&#39;);
-</code></pre>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="default">
-<h3>MATLAB: Reading Curvature Values from FIJI</h3>
-<div class="slideContent" >
-<p>Using one of the test images you have made (or the one we supplied by Macros). You can show the curvature distribution against the shape and get a feeling for the kind of results you can extract</p>
-
-<p>Using the <a href="https://gist.github.com/kmader/9779666">follwing script</a> you can inspect the results.</p>
-
-<ul>
-<li>This <a href="https://gist.github.com/kmader/9779666/1a4908968896ff2fa04723fda13d7a8505a7c0ea">version</a> calculates just the positive curvatures by using absolute value</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="default">
 <h3>FIJI: Watershed Segmentation</h3>
 <div class="column column1 slideContent" >
 <p>We will use watershed segmentation to &ldquo;break apart&rdquo; single blobs into sub-objects</p>
@@ -1112,6 +1138,59 @@ http://people.ee.ethz.ch/~maderk/qbi/PivoData.zip
 <li>Run watershed on the entire stack (click <strong>Yes</strong> in the dialog)</li>
 <li>Examine other slices in the image</li>
 <li>How could you improve the quality of the segmentation?</li>
+</ol>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>FIJI: Computing Curvature</h3>
+<div class="slideContent" >
+<p><a href="http://en.wikipedia.org/wiki/Mean_curvature">Curvature definitions</a></p>
+
+<pre><code class="matlab">MIJ.run(&#39;Compute Curvatures&#39;, &#39;compute sigma=0.5000 use order&#39;);
+</code></pre>
+
+<p>Compute the curvature on several test images and try adjusting the sigma (\( \sigma \)) value for the Gaussian filter applied. </p>
+
+<ol>
+<li>What happens to the results when you change this value? </li>
+<li>Is 0.5 enough? For the ovals image at the beginning what is an appropriate value?</li>
+</ol>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Challenge MATLAB: Reading Curvature Values from FIJI</h3>
+<div class="slideContent" >
+<p>Using one of the test images you have made (or the one we supplied by Macros). You can show the curvature distribution against the shape and get a feeling for the kind of results you can extract</p>
+
+<p>Using the <a href="https://gist.github.com/kmader/9779666">follwing script</a> you can inspect the results.</p>
+
+<ul>
+<li><p>This <a href="https://gist.github.com/kmader/9779666/1a4908968896ff2fa04723fda13d7a8505a7c0ea">version</a> calculates just the positive curvatures by using absolute value</p></li>
+<li><p>Can you differentiate between small circles and large circles (create an image to test this)</p></li>
+<li><p>What is the relationship between radius and curvature?</p></li>
+<li><p>In an anisotropic ellipse how to the semiaxis lengths relate to the curvature?</p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Advanced FIJI: Skeletonization of a Foam</h3>
+<div class="slideContent" >
+<ul>
+<li>Load in the Pivo data (<del>beer in czech</del>) 
+<code>
+http://people.ee.ethz.ch/~maderk/qbi/PivoData.zip
+</code></li>
+</ul>
+
+<ol>
+<li>Run the skeletonization as in the previous example.</li>
+<li>Import the skeleton into Matlab using the script</li>
 </ol>
 
 </div>

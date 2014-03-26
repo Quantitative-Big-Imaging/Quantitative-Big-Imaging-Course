@@ -53,6 +53,7 @@ The exercises are based on the lectures and take place in the same room after th
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex5/Ex5Slides.html)
  - [Matlab Image Generator](https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex5/cell_simulator.m)
 - 27th March -  Analyzing Complex Objects
+ - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex6/Ex6Slides.html)
 - 3rd April -  Spatial Distribution
 - 10th April -  Statistics and Reproducibility
 - 17th April - Dynamic Experiments
