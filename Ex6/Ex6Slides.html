@@ -990,6 +990,7 @@ makeOval(255, 1308, 633, 633);
 run(&quot;Invert&quot;);
 makeOval(1236, 1191, 642, 741);
 run(&quot;Invert&quot;);
+run(&quot;Select None&quot;);
 </code></pre>
 
 </div>
@@ -1052,6 +1053,20 @@ http://people.ee.ethz.ch/~maderk/qbi/PivoData.zip
 
 <pre><code class="matlab">MIJ.run(&#39;Compute Curvatures&#39;, &#39;compute sigma=0.5000 use order&#39;);
 </code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>MATLAB: Reading Curvature Values from FIJI</h3>
+<div class="slideContent" >
+<p>Using one of the test images you have made (or the one we supplied by Macros). You can show the curvature distribution against the shape and get a feeling for the kind of results you can extract</p>
+
+<p>Using the <a href="https://gist.github.com/kmader/9779666">follwing script</a> you can inspect the results.</p>
+
+<ul>
+<li>This <a href="https://gist.github.com/kmader/9779666/1a4908968896ff2fa04723fda13d7a8505a7c0ea">version</a> calculates just the positive curvatures by using absolute value</li>
+</ul>
 
 </div>
 
