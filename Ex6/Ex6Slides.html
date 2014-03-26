@@ -836,7 +836,7 @@ hljs.initHighlightingOnLoad();
 <li>Use thickness to quantify evolution in a structure</li>
 <li>Use a skeleton to identify connectivity of a pore network</li>
 <li>Use watershed to segment cells clustered together</li>
-<li>Characterize the surface of lung tissue using curvature</li>
+<li>Characterize the surface of beer foam using curvature</li>
 </ol>
 
 </div>
@@ -885,7 +885,7 @@ cd(&#39;~&#39;)
 </section>
 <section data-transition="default" data-transition-speed="default">
 <h3>Basic MIJ (MIJ) Refresher</h3>
-<div class="slideContent" >
+<div class="column column1 slideContent" >
 <h4><a href="http://fiji.sc/Miji">Tools</a> provide an interface between Matlab and FIJI</h4>
 
 <p><small>
@@ -895,6 +895,12 @@ Pushing Matlab Images to ImageJ</p>
 imData=rand(500); 
 MIJ.createImage(&#39;test&#39;,imData,true);
 </code></pre>
+
+
+</div>
+
+<div class="column column2 slideContent" >
+
 
 <p>Reading Images from FIJI to Matlab</p>
 
@@ -915,7 +921,7 @@ imagesc(imSum&lt;150)
 </section>
 <section data-transition="default" data-transition-speed="default">
 <h3>FIJI: Recording Macros</h3>
-<div class="slideContent" >
+<div class="column column1 slideContent" >
 <p><a href="http://people.ee.ethz.ch/%7Emaderk/videos/WorkflowWritingMacros.swf">Recording Marco&#39;s Movie</a></p>
 
 <ul>
@@ -923,6 +929,29 @@ imagesc(imSum&lt;150)
 <li>macro-recording feature that allows you to record operations and apply the same steps in a folder full of ￼￼￼images</li>
 <li>not all features are supported so be careful</li>
 </ul>
+
+
+</div>
+
+<div class="column column2 slideContent" >
+
+
+<h3>Macros to MIJI</h3>
+
+<p>For many commands, the results from macro recording can be directly used in Matlab/MIJI by making the following changes</p>
+
+<ol>
+<li>add  <code>MIJ.</code> before the command</li>
+<li>Replace the character &ldquo; with &#39; </li>
+</ol>
+
+<pre><code class="imagej">run(&quot;Compute Curvatures&quot;, &quot;compute sigma=0.5000 use order&quot;);
+</code></pre>
+
+<p>\[  \downarrow \textrm{Becomes}  \]</p>
+
+<pre><code class="matlab">MIJ.run(&#39;Compute Curvatures&#39;, &#39;compute sigma=0.5000 use order&#39;);
+</code></pre>
 
 </div>
 
@@ -987,7 +1016,7 @@ run(&quot;Invert&quot;);
 <div class="column column2 slideContent" >
 
 
-<p>This can be used from Matlab with the following command (the same as what comes from the macro recording, except <code>MIJ</code> comes first and &ldquo; are replaced with &#39; for Matlab)</p>
+<p>This can be used from Matlab with the following command </p>
 
 <pre><code class="matlab">MIJ.run(&#39;Local Thickness (complete process)&#39;, &#39;threshold=1&#39;)
 </code></pre>
@@ -1048,6 +1077,9 @@ http://people.ee.ethz.ch/~maderk/qbi/PivoData.zip
 <li>Create a test image from overlapping circles</li>
 <li>Try to separate them using Watershed</li>
 <li>Do again with very anisotropic ellipses instead of circles</li>
+<li>Apply the &ldquo;Analyze Particles&rdquo; command in both cases to compare the results with and without watershed</li>
+<li>Modify your scripts from the last exercises with simulated Cell Images to apply watershed before &ldquo;Analyze Particles&rdquo; is run, hint: <code>MIJ.run(&#39;Watershed&#39;)</code></li>
+<li>Is the accuracy markedly improved?</li>
 </ol>
 
 </div>
@@ -1066,62 +1098,6 @@ http://people.ee.ethz.ch/~maderk/qbi/PivoData.zip
 <li>Examine other slices in the image</li>
 <li>How could you improve the quality of the segmentation?</li>
 </ol>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="default">
-<h3>MATLAB: Cell Exercise</h3>
-<div class="column column1 slideContent" >
-<p>Download the new image generator function and save (right click raw and then click &ldquo;Save Link As&rdquo;) it in your home directory <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex5/cell_simulator.m">cell_simulator.m</a> to generate images with varying parameters (keep noise at 0 and illumination at 1 for now)</p>
-
-<ol>
-<li>Perform a threshold</li>
-<li>Run a component labeling and shape analysis </li>
-<li>Compare the shape analysis to the original results</li>
-</ol>
-
-<p><a href="https://gist.github.com/kmader/9638236">Starting Script</a></p>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
-
-<p><small></p>
-
-<h3>Volume</h3>
-
-<ul>
-<li>How do the volume distributions change between the model cells and the analysis? What effect might explain this?</li>
-<li>How might you compensate for this difference in the results? (Hint: it is already part of the analysis output)</li>
-<li>Calculate the volume fraction of the cells from the data</li>
-</ul>
-
-<h3>Position</h3>
-
-<ul>
-<li>How well do the positions of the cells overlap?</li>
-<li>Where do most of the problems seem to occur</li>
-</ul>
-
-<h3>Angle</h3>
-
-<ul>
-<li>How does the angle of the primary axis given as input compare to the computed angle?</li>
-<li>Run the simulation with <code>cell_radius_std=0</code> how does the angle compare now? Why?</li>
-</ul>
-
-<p></small></p>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="default">
-<h3>Challenge: Writing your own shape analysis script</h3>
-<div class="slideContent" >
-<p>Using the following <a href="https://gist.github.com/kmader/9659038">code</a> as a starting point, can you write your own function to perform the shape analysis within Matlab.</p>
 
 </div>
 
@@ -1161,7 +1137,41 @@ Additional more detailed
 <div class="slideContent" >
 <p><a href="https://gist.github.com/kmader/9666557">Source Scripts</a> </p>
 
-<p>The following python script / Paraview state file (they perform the same task but one is more of a macro while the other is a saved state file) show how to use the &ldquo;Threshold&rdquo; and &ldquo;Extract Surface&rdquo; commands to get meshes from voxel data. For curvature we will use the contour command (like isosurface in Matlab) to extract contours at different values. From these contours we can then calculate the curvature.</p>
+<p>The following python script / Paraview state file (they perform the same task but one is more of a macro while the other is a saved state file) show how to use the &ldquo;Threshold&rdquo; and &ldquo;Extract Surface&rdquo; commands to get meshes from voxel data. For curvature we will use the contour command (like isosurface in Matlab) to extract contours at different values. From these contours we can then calculate the curvature using the curvature filter</p>
+
+<ol>
+<li><em>Filters</em> \( \rightarrow \) <em>Alphabetical</em> \( \rightarrow \) Curvature</li>
+</ol>
+
+<p>We can visualize the results either in 3D mapped to the surface or as a histogram by using the Histogram tool</p>
+
+<ol>
+<li><em>Filters</em> \( \rightarrow \) <em>Data Analysis</em> \( \rightarrow \) <em>Histogram</em></li>
+</ol>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Advanced: 3D Watershed in Matlab</h3>
+<div class="slideContent" >
+<p>Matlab&#39;s built-in watershed function works on both 2- and 3D image data. </p>
+
+<pre><code>watershed
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Advanced: Contact Area Estimation</h3>
+<div class="slideContent" >
+<ul>
+<li>Since the watershed operation allows us to segment out the individual components of clumped objects. </li>
+<li>We can examine the interfaces between these objects (when we use component labeling this interface area is necessarily 0). </li>
+</ul>
+
+<p>Knowing that each object has a different label how would you perform </p>
 
 </div>
 

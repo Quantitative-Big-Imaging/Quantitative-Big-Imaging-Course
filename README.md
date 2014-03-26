@@ -17,6 +17,8 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis.html)
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/05-ShapeAnalysis.pdf)
 - 27th March -  Analyzing Complex Objects
+ - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/06-ComplexObjects.html)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/06-ComplexObjects_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/06-ComplexObjects.pdf)
 - 3rd April -  Spatial Distribution
 - 10th April -  Statistics and Reproducibility
 - 17th April - Dynamic Experiments
