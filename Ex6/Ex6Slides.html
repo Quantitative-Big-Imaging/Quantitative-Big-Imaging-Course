@@ -1254,6 +1254,8 @@ Additional more detailed
 <pre><code>watershed
 </code></pre>
 
+<p>The Matlab watershed command performs both watershed and the labeling of the resulting components (as shown in the lecture) unlike FIJI which just introduces a line between components that could be separated so that component labeling can be performed.</p>
+
 </div>
 
 </section>
@@ -1263,9 +1265,14 @@ Additional more detailed
 <ul>
 <li>Since the watershed operation allows us to segment out the individual components of clumped objects. </li>
 <li>We can examine the interfaces between these objects (when we use component labeling this interface area is necessarily 0). </li>
-</ul>
+<li>The goal of the exercise is to determine the area of the interfaces between objects after performing a watershed operation</li>
+<li>This can be done by writing a short script which examines the neighborhood of each voxel and compares the values to see if a boundary is present.
 
-<p>Knowing that each object has a different label how would you perform </p>
+<ul>
+<li>Another approach is to use the <code>nlfilter</code> command with a special function to identify if more than one voxel type is present</li>
+<li>Hint <code>unique</code> command tells you the different values present in a list</li>
+</ul></li>
+</ul>
 
 </div>
 
