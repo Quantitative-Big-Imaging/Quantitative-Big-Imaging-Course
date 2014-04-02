@@ -1019,7 +1019,7 @@ imagesc(imSum&lt;150)
 <section data-transition="default" data-transition-speed="default">
 <h3>Classifying Cells</h3>
 <div class="slideContent" >
-<p>You can either use your own output or the one (analyzeParticlesOutput.txt) located in the course directory along with <a href="https://gist.github.com/kmader/9934875">this</a> sample script. To classify cells into groups, right now we just use nearest neighbor distance and area, how does adding additional parameters change the result</p>
+<p>You can either use your own output or the one (<a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex7/analyzeParticlesOutput.txt">https://github.com/kmader/Quantitative-Big-Imaging-Course/blob/master/Ex7/analyzeParticlesOutput.txt</a>) located in the course directory along with <a href="https://gist.github.com/kmader/9934875">this</a> sample script. To classify cells into groups, right now we just use nearest neighbor distance and area, how does adding additional parameters change the result</p>
 
 </div>
 
@@ -1058,6 +1058,28 @@ imagesc(imSum&lt;150)
 <p><a href="http://people.ee.ethz.ch/%7Emaderk/videos/ParaviewLoadThreshold.swf">Video Instructions</a>
 Additional more detailed
 <a href="http://wiki.rac.manchester.ac.uk/community/ParaView/Tips/LoadImageStack">Web Instructions</a></p>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Creating a state</h3>
+<div class="column column1 slideContent" >
+<h3>With the test file</h3>
+
+<pre><code class="bash">pvpython ViewShape.py -c test3d.csv -t -s test3dState.pvsm
+</code></pre>
+
+
+</div>
+
+<div class="column column2 slideContent" >
+
+
+<h3>With your own files from Matlab or FIJI</h3>
+
+<pre><code class="bash">./pvpython ViewShape.py -c analyzeParticlesOutput.txt -x X -y Y -z Mean -s teststate.pvsm --tab
+</code></pre>
 
 </div>
 

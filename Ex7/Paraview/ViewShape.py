@@ -1,8 +1,39 @@
-pvtoolsPath='/Users/mader/Dropbox/TIPL/src/Python/'
-csvPath='/Users/mader/Dropbox/WorkRelated/Cheng/eye-log/clpor_2.csv'
-hasOnlyOneHeader='False'
+from optparse import OptionParser
+import os,sys,inspect
+scriptFullPath=os.path.abspath(inspect.getfile(inspect.currentframe()))
+scriptFullDir=os.path.dirname(scriptFullPath)
+print scriptFullPath+' is running in directory:'+scriptFullDir
+opTool=OptionParser()
+opTool.add_option('-p','--pvpath',dest='pvpath',help='The path to the paraview tools script')
+opTool.add_option('-c','--csvfile',dest='csvfile',help='The path of the csv file to load')
+opTool.add_option('-i','--imagefile',dest='imfile',help='The path of the rendered image to save')
+opTool.add_option('-s','--statefile',dest='statefile',help='The path of the state-file to save')
+opTool.add_option('-t','--hastwoheader',dest='hoh',default=True,action='store_false',help='Does the file have two header lines')
+opTool.add_option('','--tab',dest='csv',default=True,action='store_false',help='Use tab delimited files instead of comma')
+opTool.add_option('-x','--xcolname',dest='xColName',help='The name of the x position column')
+opTool.add_option('-y','--ycolname',dest='yColName',help='The name of the y position column')
+opTool.add_option('-z','--zcolname',dest='zColName',help='The name of the z position column')
+opTool.set_description('Creates a paraview dataset from a given CSV file')
+opTool.set_defaults(pvpath=scriptFullDir,xColName='POS_X',yColName='POS_Y',zColName='POS_Z',imfile='viewshape.png')
+# parse and load the arguments
+(opt,args)=opTool.parse_args()
+outputImageName=opt.imfile
+outputStateName=opt.statefile
+pvtoolsPath=opt.pvpath
+csvPath=opt.csvfile
+hasOnlyOneHeader=str(opt.hoh)
+xColName=opt.xColName
+yColName=opt.yColName
+zColName=opt.zColName
+if not opt.csv: csvdelim="False"
+else: csvdelim="True"
+
+
+# start paraview
+
 try: paraview.simple
 except: from paraview.simple import *
+from paraview import servermanager as sm
 paraview.simple._DisableFirstRenderCameraReset()
 
 ProgrammableSource1 = ProgrammableSource()
@@ -12,7 +43,7 @@ RenderView1 = GetRenderView()
 ProgrammableSource1.OutputDataSetType = 'vtkTable'
 ProgrammableSource1.PythonPath = ''
 ProgrammableSource1.ScriptRequestInformation = ''
-ProgrammableSource1.Script = "import os,sys\naPath='"+pvtoolsPath+"'\nif aPath not in sys.path: sys.path.append(aPath)\nimport pvtools as pvtools\nfilterList=[]\n#filterList+=[('MASK_DISTANCE_MEAN',lambda x: x>0)]\n#filterList+=[('VOLUME',lambda x: x<4000)]\nsynList=[]\n#synList+=[('Alignment',lambda x: 180/numpy.pi*pvtools.calcAlignment(x,'DIR_X','DIR_Y','DIR_Z'))]\nsynList+=[('Anisotropy',lambda x: pvtools.calcAnisotropy(x,'PCA1_S','PCA2_S','PCA3_S'))]\nimport numpy\ncFile='"+csvPath+"'\npvtools.ImportCSV(self,cFile,filterList,synList,fromR="+hasOnlyOneHeader+")\n"
+ProgrammableSource1.Script = "import os,sys\naPath='"+pvtoolsPath+"'\nif aPath not in sys.path: sys.path.append(aPath)\nimport pvtools as pvtools\nfilterList=[]\n#filterList+=[('MASK_DISTANCE_MEAN',lambda x: x>0)]\n#filterList+=[('VOLUME',lambda x: x<4000)]\nsynList=[]\n#synList+=[('Alignment',lambda x: 180/numpy.pi*pvtools.calcAlignment(x,'DIR_X','DIR_Y','DIR_Z'))]\n#synList+=[('Anisotropy',lambda x: pvtools.calcAnisotropy(x,'PCA1_S','PCA2_S','PCA3_S'))]\nimport numpy\ncFile='"+csvPath+"'\npvtools.ImportCSV(self,cFile,filterList,synList,fromR="+hasOnlyOneHeader+",csvdelim="+csvdelim+")\n"
 AnimationScene1 = GetAnimationScene()
 AnimationScene1.ViewModules = []
 
@@ -34,9 +65,9 @@ TableToPoints1.ZColumn = 'PCA1_Z'
 TableToPoints1.YColumn = 'PCA1_Z'
 
 # Set the columns correctly so points can be visualized
-TableToPoints1.XColumn = 'POS_X'
-TableToPoints1.ZColumn = 'POS_Z'
-TableToPoints1.YColumn = 'POS_Y'
+TableToPoints1.XColumn = xColName
+TableToPoints1.ZColumn = yColName
+TableToPoints1.YColumn = zColName
 
 
 RenameSource("To Points", TableToPoints1)
@@ -114,3 +145,5 @@ RenderView2.CameraClippingRange = [1521.8072855436326, 3778.1925641411135]
 RenderView2.CameraPosition = [-606.23366850569721, -265.84044756719146, -1992.9368867340388]
 
 Render()
+WriteImage(outputImageName)
+if outputStateName is not None: sm.SaveState(outputStateName)

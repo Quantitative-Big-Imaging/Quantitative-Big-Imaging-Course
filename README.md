@@ -20,6 +20,8 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/06-ComplexObjects.html)
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/06-ComplexObjects_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/06-ComplexObjects.pdf)
 - 3rd April -  Spatial Distribution
+ - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/07-DistributionAnalysis.html)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/07-DistributionAnalysis_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/07-DistributionAnalysis.pdf)
 - 10th April -  Statistics and Reproducibility
 - 17th April - Dynamic Experiments
 - 8th May - Big Data
@@ -55,6 +57,9 @@ The exercises are based on the lectures and take place in the same room after th
 - 27th March -  Analyzing Complex Objects
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex6/Ex6Slides.html)
 - 3rd April -  Spatial Distribution
+ - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex7/Ex7Slides.html)
+ - [Exercise Data](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex7/)
+ - [Paraview Code](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex7/Paraview)
 - 10th April -  Statistics and Reproducibility
 - 17th April - Dynamic Experiments
 - 8th May - Big Data
