@@ -1407,7 +1407,7 @@ ggplot(cur.cell.df,aes(x=x,y=y))+
 <hr/>
 
 <ol>
-<li><p>We want to know how the cells are communicating</p>
+<li>We want to know how the cells are communicating
 
 <ul>
 <li>Maybe physically connected cells (touching) are communicating \(\rightarrow\) watershed</li>
@@ -1415,7 +1415,26 @@ ggplot(cur.cell.df,aes(x=x,y=y))+
 <li>Maybe cells which are close <strong>enough</strong> are communicating \(\rightarrow\) <strong>?</strong></li>
 <li>Maybe cells form hub and spoke networks \(\rightarrow\) <strong>?</strong></li>
 </ul></li>
-<li><p>We want to know how the cells are nourished</p>
+</ol>
+
+<h1>Motivation (continued)</h1>
+
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(cur.cell.df,aes(x=x,y=y))+
+  geom_tile(color="black",fill="grey")+
+  geom_path(data=cell.ellipse,aes(color="Ellipse",group=val))+
+  geom_path(data=bbox.fun(cur.cell.df),aes(x=xi,y=yi,color="Bounding\nBox",group=val))+
+  labs(title="Single Cell",color="Shape\nAnalysis\nMethod")+
+  theme_bw(20)+coord_equal()+guides(fill=F)
+</pre></div>
+
+<div class="rimage center"><img src="print_figures/unnamed-chunk-3.png" title="All Cells" alt="All Cells" class="plot" /></div>
+
+<p></div></div></p>
+
+<hr/>
+
+<ol>
+<li>We want to know how the cells are nourished
 
 <ul>
 <li>Maybe closely packed cells are better nourished \(\rightarrow\) count cells in a box<strong>?</strong></li>
@@ -1479,7 +1498,7 @@ ggplot(cur.cell.df,aes(x=x,y=y))+
 
 <h1>Ok, so now what?</h1>
 
-<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(cur.cell.df,aes(x=x,y=y))+
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(cur.cell.df,aes(x=x,y=y))+
   geom_tile(color="black",fill="grey")+
   geom_path(data=cell.ellipse,aes(color="Ellipse",group=val))+
   labs(title="Zoomed into a smaller region")+
@@ -1487,7 +1506,7 @@ ggplot(cur.cell.df,aes(x=x,y=y))+
   theme_bw(20)+coord_equal()+guides(fill=F,color=F)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-3.png" title="Smaller Region" alt="Smaller Region" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-4.png" title="Smaller Region" alt="Smaller Region" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -1632,7 +1651,7 @@ kable(t(s.table),align='c',digits=2)
 
 <p>It is deceptively easy to calculate involving the ratio of the number of objects divided by the volume.</p>
 
-<div class="chunk" id="unnamed-chunk-6"><div class="rcode"><div class="source"><pre class="knitr r">pt.maker<-function(n.pts,rn.fun=function(pts) runif(pts,min=0,max=1),...) data.frame(x=rn.fun(n.pts),y=rn.fun(n.pts),n.pts=n.pts,...)
+<div class="chunk" id="unnamed-chunk-7"><div class="rcode"><div class="source"><pre class="knitr r">pt.maker<-function(n.pts,rn.fun=function(pts) runif(pts,min=0,max=1),...) data.frame(x=rn.fun(n.pts),y=rn.fun(n.pts),n.pts=n.pts,...)
 
 ggplot(ldply(c(10,100,1000),pt.maker),aes(x,y))+
   geom_point()+facet_grid(n.pts~.)+
@@ -1640,7 +1659,7 @@ ggplot(ldply(c(10,100,1000),pt.maker),aes(x,y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-6.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-7.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -1648,7 +1667,7 @@ ggplot(ldply(c(10,100,1000),pt.maker),aes(x,y))+
 
 <p>It doesn&#39;t tell us much, many very different systems with the <em>same</em> density and what if we want the density of a single point? Does that even make sense?</p>
 
-<div class="chunk" id="unnamed-chunk-7"><div class="rcode"><div class="source"><pre class="knitr r">dist.funs<-c(function(pts) runif(pts,min=0,max=1),
+<div class="chunk" id="unnamed-chunk-8"><div class="rcode"><div class="source"><pre class="knitr r">dist.funs<-c(function(pts) runif(pts,min=0,max=1),
              function(pts) rnorm(pts,mean=0.5,sd=0.3),
              function(pts) rnorm(pts,mean=0.5,sd=0.1),
              function(pts) rlnorm(pts,meanlog=1.5,sdlog=1.5)/exp(3))
@@ -1662,7 +1681,7 @@ ggplot(ldply(1:length(dist.funs),function(fun.ind) pt.maker(500,rn.fun=dist.funs
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-7.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-8.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -1731,7 +1750,7 @@ ggplot(ldply(1:length(dist.funs),function(fun.ind) pt.maker(500,rn.fun=dist.funs
 
 <p>This ensures when we examine the orientation distribution (NN\(\theta\)) of the neighbors it is evenly distributed</p>
 
-<div class="chunk" id="unnamed-chunk-8"><div class="rcode"><div class="source"><pre class="knitr r">cur.grid<-expand.grid(x=-c(-4:4),y=c(-4:4))
+<div class="chunk" id="unnamed-chunk-9"><div class="rcode"><div class="source"><pre class="knitr r">cur.grid<-expand.grid(x=-c(-4:4),y=c(-4:4))
 cur.grid$val<-1:nrow(cur.grid)
 std.grid<-cur.grid
 ggplot(cur.grid,aes(x=x,y=y))+
@@ -1744,7 +1763,7 @@ ggplot(cur.grid,aes(x=x,y=y))+
   theme_bw(20)+guides(fill=F)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-8.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-9.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -1805,7 +1824,7 @@ ggplot(cur.grid,aes(x=x,y=y))+
 
 <h1>Examining Compression</h1>
 
-<div class="chunk" id="unnamed-chunk-9"><div class="rcode"><div class="source"><pre class="knitr r">comp.fun<-function(c.stretch,in.grid=cur.grid) {
+<div class="chunk" id="unnamed-chunk-10"><div class="rcode"><div class="source"><pre class="knitr r">comp.fun<-function(c.stretch,in.grid=cur.grid) {
   str.grid<-in.grid
   str.grid$x<-with(in.grid,c.stretch*x)
   str.grid$y<-with(in.grid,c.stretch*y)
@@ -1825,13 +1844,13 @@ ggplot(test.systems.comp,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-9.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-10.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-10"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-11"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(dist.plots.comp,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
     geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
@@ -1843,13 +1862,13 @@ ggplot(dist.plots.comp,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-10.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-11.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Compression Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-11"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
+<div class="chunk" id="unnamed-chunk-12"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
        aes(x=dist,fill=as.factor(glab)))+
   geom_histogram(binwidth=0.1)+
   labs(x="NND",title="NN Distances",color="Stretch")+
@@ -1857,13 +1876,13 @@ ggplot(dist.plots.comp,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-11.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-12.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-12"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
+<div class="chunk" id="unnamed-chunk-13"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
        aes(x=180/pi*atan2(ye-y,xe-x),fill=as.factor(glab)))+
   geom_histogram(binwidth=45)+
     labs(x=expression(paste("NN ",theta)),title="NN Orientation",fill="Stretch")+
@@ -1871,13 +1890,13 @@ ggplot(dist.plots.comp,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-12.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-13.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Examining Different Shears</h1>
 
-<div class="chunk" id="unnamed-chunk-13"><div class="rcode"><div class="source"><pre class="knitr r">shear.fun<-function(c.shear,in.grid=cur.grid) {
+<div class="chunk" id="unnamed-chunk-14"><div class="rcode"><div class="source"><pre class="knitr r">shear.fun<-function(c.shear,in.grid=cur.grid) {
   str.grid<-in.grid
   str.grid$x<-with(in.grid,x+c.shear*(y-2)/2)
   cbind(str.grid,glab=c.shear)
@@ -1896,13 +1915,13 @@ ggplot(test.systems.shear,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-13.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-14.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-14"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,
+<div class="chunk" id="unnamed-chunk-15"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
     geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
   geom_segment(aes(color=glab),
@@ -1913,13 +1932,13 @@ ggplot(test.systems.shear,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-14.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-15.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Shear Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-15"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
+<div class="chunk" id="unnamed-chunk-16"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
        aes(x=dist,fill=as.factor(glab)))+
   geom_histogram(binwidth=0.25)+
   labs(x="NND",title="NN Distances",fill="Shear")+
@@ -1927,13 +1946,13 @@ ggplot(test.systems.shear,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-15.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-16.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-16"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
+<div class="chunk" id="unnamed-chunk-17"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
        aes(x=180/pi*atan2(ye-y,xe-x),fill=as.factor(glab)))+
   geom_histogram(binwidth=45)+
     labs(x=expression(paste("NN ",theta)),title="NN Orientation",fill="Shear")+
@@ -1941,13 +1960,13 @@ ggplot(test.systems.shear,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-16.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-17.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Examining Different Stretches</h1>
 
-<div class="chunk" id="unnamed-chunk-17"><div class="rcode"><div class="source"><pre class="knitr r">str.fun<-function(x,a=1,r=4) sign(x)*r*(abs(x)/r)^a
+<div class="chunk" id="unnamed-chunk-18"><div class="rcode"><div class="source"><pre class="knitr r">str.fun<-function(x,a=1,r=4) sign(x)*r*(abs(x)/r)^a
 stretch.fun<-function(c.stretch,in.grid=cur.grid) {
   str.grid<-in.grid
   str.grid$x<-with(in.grid,str.fun(x,a=c.stretch))
@@ -1968,13 +1987,13 @@ ggplot(test.systems,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-17.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-18.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-18"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-19"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(dist.plots,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
     geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
@@ -1986,13 +2005,13 @@ ggplot(dist.plots,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-18.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-19.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Stretch Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-19"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
+<div class="chunk" id="unnamed-chunk-20"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
        aes(x=dist,fill=as.factor(glab)))+
   #geom_density(size=1.5,adjust=1/5)+
   geom_histogram(binwidth=0.25)+
@@ -2001,13 +2020,13 @@ ggplot(dist.plots,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-19.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-20.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-20"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
+<div class="chunk" id="unnamed-chunk-21"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
        aes(x=180/pi*atan2(ye-y,xe-x),fill=as.factor(glab)))+
   geom_histogram(binwidth=45)+
     labs(x=expression(paste("NN ",theta)),title="NN Orientation",fill="Stretch")+
@@ -2015,13 +2034,13 @@ ggplot(dist.plots,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-20.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-21.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Examining Swirl Systems</h1>
 
-<div class="chunk" id="unnamed-chunk-21"><div class="rcode"><div class="source"><pre class="knitr r">swirl.fun<-function(c.swirl,in.grid=cur.grid) {
+<div class="chunk" id="unnamed-chunk-22"><div class="rcode"><div class="source"><pre class="knitr r">swirl.fun<-function(c.swirl,in.grid=cur.grid) {
   in.grid$cdist<-with(in.grid,sqrt(x^2+y^2))
   str.grid<-in.grid
   str.grid$x<-with(in.grid,cos(c.swirl*cdist)*x-sin(c.swirl*cdist)*y)
@@ -2044,13 +2063,13 @@ ggplot(test.systems.swirl,aes(x=x,y=y))+
   theme_bw(20)+guides(color=F)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-21.png" title="" alt="" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-22.png" title="" alt="" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-22"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.swirl,
+<div class="chunk" id="unnamed-chunk-23"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.swirl,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
     geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
   geom_segment(
@@ -2061,13 +2080,13 @@ ggplot(test.systems.swirl,aes(x=x,y=y))+
   theme_bw(20)+guides(color=F)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-22.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-23.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Swirl NN Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-23"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-24"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(dist.plots.swirl,      
        aes(x=dist,fill=as.factor(glab)))+
   geom_histogram(binwidth=0.25)+
@@ -2076,13 +2095,13 @@ ggplot(dist.plots.swirl,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-23.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-24.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-24"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-25"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(dist.plots.swirl,      
        aes(x=180/pi*atan2(ye-y,xe-x),color=as.factor(glab)))+
   geom_density(aes(y=..scaled..),size=1,adjust=1/7)+
@@ -2091,7 +2110,7 @@ ggplot(dist.plots.swirl,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-24.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-25.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2138,7 +2157,7 @@ cur.grid$val<-1:nrow(cur.grid)
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-25"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(cur.grid,aes(x=x,y=y))+
+<div class="chunk" id="unnamed-chunk-26"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(cur.grid,aes(x=x,y=y))+
   geom_point(aes(color=val),size=3,alpha=0.75)+
   labs(title="Positions and Neighbors",color="Label")+
   scale_color_gradientn(colours=rainbow(10))+
@@ -2146,13 +2165,13 @@ cur.grid$val<-1:nrow(cur.grid)
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-25.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-26.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Examining Compression</h1>
 
-<div class="chunk" id="unnamed-chunk-26"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-27"><div class="rcode"><div class="source"><pre class="knitr r">
 test.systems.comp<-ldply(c(0.6,1,1.5),function(c.stretch) {
   str.grid<-cur.grid
   str.grid$x<-with(cur.grid,c.stretch*x)
@@ -2172,13 +2191,13 @@ ggplot(test.systems.comp,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-26.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-27.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-27"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,
+<div class="chunk" id="unnamed-chunk-28"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
     geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
   geom_segment(aes(color=glab),
@@ -2189,13 +2208,13 @@ ggplot(test.systems.comp,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-27.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-28.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Compression Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-28"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
+<div class="chunk" id="unnamed-chunk-29"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
        aes(x=dist,fill=as.factor(glab)))+
   geom_histogram(binwidth=0.25)+
   labs(x="NND",title="NN Distances",color="Stretch")+
@@ -2203,13 +2222,13 @@ ggplot(test.systems.comp,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-28.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-29.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-29"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
+<div class="chunk" id="unnamed-chunk-30"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.comp,      
        aes(x=180/pi*atan2(ye-y,xe-x),fill=as.factor(glab)))+
   geom_histogram(binwidth=45)+
     labs(x=expression(paste("NN ",theta)),title="NN Orientation",fill="Stretch")+
@@ -2217,13 +2236,13 @@ ggplot(test.systems.comp,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-29.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-30.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Examining Different Shears</h1>
 
-<div class="chunk" id="unnamed-chunk-30"><div class="rcode"><div class="source"><pre class="knitr r">test.systems.shear<-ldply(c(0,1,3),function(c.shear) {
+<div class="chunk" id="unnamed-chunk-31"><div class="rcode"><div class="source"><pre class="knitr r">test.systems.shear<-ldply(c(0,1,3),function(c.shear) {
   str.grid<-cur.grid
   str.grid$x<-with(cur.grid,x+c.shear*(y-2)/2)
   cbind(str.grid,glab=c.shear)
@@ -2241,13 +2260,13 @@ ggplot(test.systems.shear,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-30.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-31.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-31"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-32"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(dist.plots.shear,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
   geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
@@ -2259,26 +2278,26 @@ ggplot(dist.plots.shear,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-31.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-32.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Shear Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-32"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
+<div class="chunk" id="unnamed-chunk-33"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
        aes(x=dist,color=as.factor(glab)))+
   geom_density(size=1.5,adjust=1)+
   labs(x="NND",title="NN Distances",color="Shear")+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-32.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-33.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-33"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
+<div class="chunk" id="unnamed-chunk-34"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.shear,      
        aes(x=180/pi*atan2(ye-y,xe-x),color=as.factor(glab)))+
   geom_density(size=1.5,adjust=1/1.5)+
     labs(x=expression(paste("NN ",theta)),title="NN Orientation",color="Shear")+
@@ -2286,13 +2305,13 @@ ggplot(dist.plots.shear,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-33.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-34.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Examining Different Stretches</h1>
 
-<div class="chunk" id="unnamed-chunk-34"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-35"><div class="rcode"><div class="source"><pre class="knitr r">
 str.fun<-function(x,a=1,r=4) sign(x)*r*(abs(x)/r)^a
 test.systems<-ldply(c(0.5,1,3),function(c.stretch) {
   str.grid<-cur.grid
@@ -2313,13 +2332,13 @@ ggplot(test.systems,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-34.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-35.png" title="Uniaxially Stretched" alt="Uniaxially Stretched" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-35"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-36"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(dist.plots,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
     geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
@@ -2331,13 +2350,13 @@ ggplot(dist.plots,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-35.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-36.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Stretch Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-36"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
+<div class="chunk" id="unnamed-chunk-37"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
        aes(x=dist,color=as.factor(glab)))+
   geom_density(size=1.5,adjust=1)+
   #geom_histogram(binwidth=0.25)+
@@ -2345,13 +2364,13 @@ ggplot(dist.plots,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-36.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-37.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-37"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
+<div class="chunk" id="unnamed-chunk-38"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots,      
        aes(x=180/pi*atan2(ye-y,xe-x),color=as.factor(glab)))+
   #geom_histogram(binwidth=45)+
   geom_density(size=1.5,adjust=1)+
@@ -2360,13 +2379,13 @@ ggplot(dist.plots,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-37.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-38.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Examining Swirl Systems</h1>
 
-<div class="chunk" id="unnamed-chunk-38"><div class="rcode"><div class="source"><pre class="knitr r">cur.grid$cdist<-with(cur.grid,sqrt(x^2+y^2))
+<div class="chunk" id="unnamed-chunk-39"><div class="rcode"><div class="source"><pre class="knitr r">cur.grid$cdist<-with(cur.grid,sqrt(x^2+y^2))
 test.systems.swirl<-ldply(c(0,pi/40,pi/10),function(c.swirl) {
   str.grid<-cur.grid
   str.grid$x<-with(cur.grid,cos(c.swirl*cdist)*x-sin(c.swirl*cdist)*y)
@@ -2387,13 +2406,13 @@ ggplot(test.systems.swirl,aes(x=x,y=y))+
   theme_bw(20)+guides(fill=F)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-38.png" title="" alt="" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-39.png" title="" alt="" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-39"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.swirl,
+<div class="chunk" id="unnamed-chunk-40"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.swirl,
        aes(x=0,y=0,xend=xe-x,yend=ye-y))+
     geom_density2d(aes(x=xe-x,y=ye-y),color="red",alpha=0.7)+
   geom_segment(aes(color=glab),
@@ -2404,13 +2423,13 @@ ggplot(test.systems.swirl,aes(x=x,y=y))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-39.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-40.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Swirl NN Distributions</h1>
 
-<div class="chunk" id="unnamed-chunk-40"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-41"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(dist.plots.swirl,      
        aes(x=dist,color=as.factor(glab)))+
   geom_density()+
@@ -2419,13 +2438,13 @@ ggplot(dist.plots.swirl,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-40.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-41.png" title="Length Distribution" alt="Length Distribution" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-41"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.swirl,      
+<div class="chunk" id="unnamed-chunk-42"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(dist.plots.swirl,      
        aes(x=180/pi*atan2(ye-y,xe-x),color=as.factor(glab)))+
   geom_density(size=1,adjust=1)+
     labs(x=expression(paste("NN ",theta)),title="NN Orientation",color="Swirl",y="Frequency")+
@@ -2433,7 +2452,7 @@ ggplot(dist.plots.swirl,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-41.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-42.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2456,10 +2475,10 @@ dd.summary<-function(in.df) ddply(in.df,.(glab),dd.grid.summary)
 
 <p>Voronoi tesselation is a method for partitioning a space based on points. The basic idea is that each point \(\vec{p}\) is assigned a region \(\textbf{R}\) consisting of points which are closer to \(\vec{p}\) than any of the other points. Below the diagram is shown in a dashed line for the points shown as small circles.</p>
 
-<div class="chunk" id="unnamed-chunk-42"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(std.grid),wlines=c('tess'),showrect=T)
+<div class="chunk" id="unnamed-chunk-43"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(std.grid),wlines=c('tess'),showrect=T)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-42.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-43.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2469,10 +2488,10 @@ dd.summary<-function(in.df) ddply(in.df,.(glab),dd.grid.summary)
 
 <p>The grid on the random system, shows much more diversity in territory area.</p>
 
-<div class="chunk" id="unnamed-chunk-43"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(cur.grid),wlines=c('tess'),showrect=T)
+<div class="chunk" id="unnamed-chunk-44"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(cur.grid),wlines=c('tess'),showrect=T)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-43.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-44.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2494,7 +2513,7 @@ So the same, but we now have a density definition for a single point!
 
 <h1>Density Examples</h1>
 
-<div class="chunk" id="unnamed-chunk-44"><div class="rcode"><div class="source"><pre class="knitr r">rand.pnts<-ldply(1:length(dist.funs),function(fun.ind) {
+<div class="chunk" id="unnamed-chunk-45"><div class="rcode"><div class="source"><pre class="knitr r">rand.pnts<-ldply(1:length(dist.funs),function(fun.ind) {
   out.pts<-pt.maker(500,rn.fun=dist.funs[[fun.ind]],fun.ind=fun.ind)
   out.pts$val<-1:nrow(out.pts)
   out.pts
@@ -2509,13 +2528,13 @@ ggplot(ddply(rand.pnts,.(fun.ind),function(in.pts) deldir(in.pts)$summary),
   theme_bw(15)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-44.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-45.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
 <hr/>
 
-<div class="chunk" id="unnamed-chunk-45"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(cbind(ddply(rand.pnts,.(fun.ind),function(c.block) deldir(c.block,rw=c(0,1,0,1))$summary),mn.pos=500),                 
+<div class="chunk" id="unnamed-chunk-46"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(cbind(ddply(rand.pnts,.(fun.ind),function(c.block) deldir(c.block,rw=c(0,1,0,1))$summary),mn.pos=500),                 
        aes(x=1/del.area))+
   geom_density(aes(y=..count..,color="Local"))+
   geom_vline(aes(colour="Average",xintercept=mn.pos))+
@@ -2525,7 +2544,7 @@ ggplot(ddply(rand.pnts,.(fun.ind),function(in.pts) deldir(in.pts)$summary),
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-45.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-46.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2533,10 +2552,10 @@ ggplot(ddply(rand.pnts,.(fun.ind),function(in.pts) deldir(in.pts)$summary),
 
 <p>A parallel or <em>dual</em> <a href="http://mathworld.wolfram.com/DelaunayTriangulation.html">idea</a> where triangles are used and each triangle is created such that the circle which encloses it contains no other points. The triangulation makes the <em>neighbors</em> explicit since connected points in the triangulation correspond to points in our tesselation which share an edge (or face in 3D)</p>
 
-<div class="chunk" id="unnamed-chunk-46"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(std.grid),wlines=c('triang'))
+<div class="chunk" id="unnamed-chunk-47"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(std.grid),wlines=c('triang'))
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-46.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-47.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2546,10 +2565,10 @@ ggplot(ddply(rand.pnts,.(fun.ind),function(in.pts) deldir(in.pts)$summary),
 
 <p>The triangulation on a random system has a much higher diversity in neighbor count</p>
 
-<div class="chunk" id="unnamed-chunk-47"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(cur.grid),wlines=c('triang'))
+<div class="chunk" id="unnamed-chunk-48"><div class="rcode"><div class="source"><pre class="knitr r">plot(deldir(cur.grid),wlines=c('triang'))
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-47.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-48.png" title="NN Orientation" alt="NN Orientation" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2557,19 +2576,7 @@ ggplot(ddply(rand.pnts,.(fun.ind),function(in.pts) deldir(in.pts)$summary),
 
 <h3>Compression</h3>
 
-<div class="chunk" id="unnamed-chunk-48"><div class="rcode"><div class="source"><pre class="knitr r">v.comp<-quantile(test.systems.comp$glab,0.2)
-plot(deldir(subset(test.systems.comp,glab==v.comp)),wlines=c('tess'),showrect=T)
-</pre></div>
-
-<div class="rimage center"><img src="print_figures/unnamed-chunk-48.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
-
-<p></div></div></p>
-
-<hr/>
-
-<h3>Tension</h3>
-
-<div class="chunk" id="unnamed-chunk-49"><div class="rcode"><div class="source"><pre class="knitr r">v.comp<-quantile(test.systems.comp$glab,0.95)
+<div class="chunk" id="unnamed-chunk-49"><div class="rcode"><div class="source"><pre class="knitr r">v.comp<-quantile(test.systems.comp$glab,0.2)
 plot(deldir(subset(test.systems.comp,glab==v.comp)),wlines=c('tess'),showrect=T)
 </pre></div>
 
@@ -2577,23 +2584,23 @@ plot(deldir(subset(test.systems.comp,glab==v.comp)),wlines=c('tess'),showrect=T)
 
 <p></div></div></p>
 
-<h1>Shear System</h1>
+<hr/>
 
-<h3>Low Shear</h3>
+<h3>Tension</h3>
 
-<div class="chunk" id="unnamed-chunk-50"><div class="rcode"><div class="source"><pre class="knitr r">v.shear<-min(test.systems.shear$glab)
-plot(deldir(subset(test.systems.shear,glab==v.shear)),wlines=c('tess'),showrect=T)
+<div class="chunk" id="unnamed-chunk-50"><div class="rcode"><div class="source"><pre class="knitr r">v.comp<-quantile(test.systems.comp$glab,0.95)
+plot(deldir(subset(test.systems.comp,glab==v.comp)),wlines=c('tess'),showrect=T)
 </pre></div>
 
 <div class="rimage center"><img src="print_figures/unnamed-chunk-50.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
-<hr/>
+<h1>Shear System</h1>
 
-<h3>High Shear</h3>
+<h3>Low Shear</h3>
 
-<div class="chunk" id="unnamed-chunk-51"><div class="rcode"><div class="source"><pre class="knitr r">v.shear<-max(test.systems.shear$glab)
+<div class="chunk" id="unnamed-chunk-51"><div class="rcode"><div class="source"><pre class="knitr r">v.shear<-min(test.systems.shear$glab)
 plot(deldir(subset(test.systems.shear,glab==v.shear)),wlines=c('tess'),showrect=T)
 </pre></div>
 
@@ -2601,15 +2608,27 @@ plot(deldir(subset(test.systems.shear,glab==v.shear)),wlines=c('tess'),showrect=
 
 <p></div></div></p>
 
+<hr/>
+
+<h3>High Shear</h3>
+
+<div class="chunk" id="unnamed-chunk-52"><div class="rcode"><div class="source"><pre class="knitr r">v.shear<-max(test.systems.shear$glab)
+plot(deldir(subset(test.systems.shear,glab==v.shear)),wlines=c('tess'),showrect=T)
+</pre></div>
+
+<div class="rimage center"><img src="print_figures/unnamed-chunk-52.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+
+<p></div></div></p>
+
 <h1>Stretch System</h1>
 
 <h3>Low Stretch</h3>
 
-<div class="chunk" id="unnamed-chunk-52"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-min(test.systems$glab)
+<div class="chunk" id="unnamed-chunk-53"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-min(test.systems$glab)
 plot(deldir(subset(test.systems,glab==v.stretch)),wlines=c('tess'),showrect=T)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-52.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-53.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2617,11 +2636,11 @@ plot(deldir(subset(test.systems,glab==v.stretch)),wlines=c('tess'),showrect=T)
 
 <h3>Highly Stretched System</h3>
 
-<div class="chunk" id="unnamed-chunk-53"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-quantile(test.systems$glab,0.95)
+<div class="chunk" id="unnamed-chunk-54"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-quantile(test.systems$glab,0.95)
 plot(deldir(subset(test.systems,glab>=v.stretch)),wlines=c('tess'),showrect=T)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-53.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-54.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2629,19 +2648,7 @@ plot(deldir(subset(test.systems,glab>=v.stretch)),wlines=c('tess'),showrect=T)
 
 <h3>Low Swirl System</h3>
 
-<div class="chunk" id="unnamed-chunk-54"><div class="rcode"><div class="source"><pre class="knitr r">v.swirl<-min(test.systems.swirl$glab)
-plot(deldir(subset(test.systems.swirl,glab==v.swirl)),wlines=c('tess'),showrect=T)
-</pre></div>
-
-<div class="rimage center"><img src="print_figures/unnamed-chunk-54.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
-
-<p></div></div></p>
-
-<hr/>
-
-<h3>High Swirl System</h3>
-
-<div class="chunk" id="unnamed-chunk-55"><div class="rcode"><div class="source"><pre class="knitr r">v.swirl<-max(test.systems.swirl$glab)
+<div class="chunk" id="unnamed-chunk-55"><div class="rcode"><div class="source"><pre class="knitr r">v.swirl<-min(test.systems.swirl$glab)
 plot(deldir(subset(test.systems.swirl,glab==v.swirl)),wlines=c('tess'),showrect=T)
 </pre></div>
 
@@ -2649,25 +2656,37 @@ plot(deldir(subset(test.systems.swirl,glab==v.swirl)),wlines=c('tess'),showrect=
 
 <p></div></div></p>
 
-<h1>Neighborhoods</h1>
+<hr/>
 
-<h3>Compression</h3>
+<h3>High Swirl System</h3>
 
-<div class="chunk" id="unnamed-chunk-56"><div class="rcode"><div class="source"><pre class="knitr r">v.comp<-min(test.systems.comp$glab)
-plot(deldir(subset(test.systems.comp,glab==v.comp)),wlines=c('triang'),showrect=T)
+<div class="chunk" id="unnamed-chunk-56"><div class="rcode"><div class="source"><pre class="knitr r">v.swirl<-max(test.systems.swirl$glab)
+plot(deldir(subset(test.systems.swirl,glab==v.swirl)),wlines=c('tess'),showrect=T)
 </pre></div>
 
 <div class="rimage center"><img src="print_figures/unnamed-chunk-56.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
-<h3>Stretch</h3>
+<h1>Neighborhoods</h1>
 
-<div class="chunk" id="unnamed-chunk-57"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-max(test.systems$glab)
-plot(deldir(subset(test.systems,glab==v.stretch)),wlines=c('triang'),showrect=T)
+<h3>Compression</h3>
+
+<div class="chunk" id="unnamed-chunk-57"><div class="rcode"><div class="source"><pre class="knitr r">v.comp<-min(test.systems.comp$glab)
+plot(deldir(subset(test.systems.comp,glab==v.comp)),wlines=c('triang'),showrect=T)
 </pre></div>
 
 <div class="rimage center"><img src="print_figures/unnamed-chunk-57.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+
+<p></div></div></p>
+
+<h3>Stretch</h3>
+
+<div class="chunk" id="unnamed-chunk-58"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-max(test.systems$glab)
+plot(deldir(subset(test.systems,glab==v.stretch)),wlines=c('triang'),showrect=T)
+</pre></div>
+
+<div class="rimage center"><img src="print_figures/unnamed-chunk-58.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2675,21 +2694,21 @@ plot(deldir(subset(test.systems,glab==v.stretch)),wlines=c('triang'),showrect=T)
 
 <h3>Shear</h3>
 
-<div class="chunk" id="unnamed-chunk-58"><div class="rcode"><div class="source"><pre class="knitr r">v.shear<-max(test.systems.shear$glab)
+<div class="chunk" id="unnamed-chunk-59"><div class="rcode"><div class="source"><pre class="knitr r">v.shear<-max(test.systems.shear$glab)
 plot(deldir(subset(test.systems.shear,glab==v.shear)),wlines=c('triang'),showrect=T)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-58.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-59.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h3>Swirl</h3>
 
-<div class="chunk" id="unnamed-chunk-59"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-quantile(test.systems.swirl$glab,0.95)
+<div class="chunk" id="unnamed-chunk-60"><div class="rcode"><div class="source"><pre class="knitr r">v.stretch<-quantile(test.systems.swirl$glab,0.95)
 plot(deldir(subset(test.systems.swirl,glab==v.stretch)),wlines=c('triang'),showrect=T)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-59.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-60.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2707,7 +2726,7 @@ test.all.vor<-rbind(cbind(test.systems.comp.vor,system="Compression",cdist=0),
 
 <p></div></div></p>
 
-<div class="chunk" id="unnamed-chunk-60"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-61"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(test.all.vor,      
        aes(x=n.count))+
   geom_density(aes(color=as.factor(glab)),adjust=1.5)+
@@ -2716,13 +2735,13 @@ ggplot(test.all.vor,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-60.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-61.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Volume</h1>
 
-<div class="chunk" id="unnamed-chunk-61"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-62"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(test.all.vor,      
        aes(x=area))+
   geom_density(aes(color=as.factor(glab)))+
@@ -2732,13 +2751,13 @@ ggplot(test.all.vor,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-61.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-62.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Mean vs Variability</h1>
 
-<div class="chunk" id="unnamed-chunk-62"><div class="rcode"><div class="source"><pre class="knitr r">
+<div class="chunk" id="unnamed-chunk-63"><div class="rcode"><div class="source"><pre class="knitr r">
 ggplot(
   ddply(test.all.vor,.(glab,system),
         function(in.seg) with(in.seg,data.frame(mean.val=mean(n.count),std.val=sd(n.count)))),
@@ -2750,11 +2769,11 @@ ggplot(
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-62.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-63.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
-<div class="chunk" id="unnamed-chunk-63"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(
+<div class="chunk" id="unnamed-chunk-64"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(
   ddply(test.all.vor,.(glab,system),
         function(in.seg) with(in.seg,data.frame(mean.val=mean(area),std.val=sd(area)))),
   aes(x=as.factor(glab)))+
@@ -2765,7 +2784,7 @@ ggplot(
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-63.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-64.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -2870,7 +2889,7 @@ With this simulation-based approach</p>
 
 <h1>Compression</h1>
 
-<div class="chunk" id="unnamed-chunk-64"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Compression"),
+<div class="chunk" id="unnamed-chunk-65"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Compression"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) comp.fun(0.75,in.df)),system="Compression"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) comp.fun(1.25,in.df)),system="Tension")
                 )
@@ -2881,13 +2900,13 @@ ggplot(melt(comp.sim),aes(x=value,color=system))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-64.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-65.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Compression Sensitivity</h1>
 
-<div class="chunk" id="unnamed-chunk-65"><div class="rcode"><div class="source"><pre class="knitr r">comp.data<-ldply(seq(0.9,1.1,length.out=5),function(c.comp) 
+<div class="chunk" id="unnamed-chunk-66"><div class="rcode"><div class="source"><pre class="knitr r">comp.data<-ldply(seq(0.9,1.1,length.out=5),function(c.comp) 
   cbind(many.grid(c.pts,trans.fun=function(in.df) comp.fun(c.comp,in.df)),comp=c.comp))
 
 
@@ -2899,13 +2918,13 @@ ggplot(melt(comp.data,id.vars=c("comp")),aes(x=comp,y=value))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-65.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-66.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Stretching</h1>
 
-<div class="chunk" id="unnamed-chunk-66"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Stretch"),
+<div class="chunk" id="unnamed-chunk-67"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Stretch"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) stretch.fun(0.8,in.df)),system="Squeezing"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) stretch.fun(1.2,in.df)),system="Pushing")
                 )
@@ -2917,13 +2936,13 @@ ggplot(melt(comp.sim),aes(x=value,color=system))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-66.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-67.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Stretching Sensitivity</h1>
 
-<div class="chunk" id="unnamed-chunk-67"><div class="rcode"><div class="source"><pre class="knitr r">stretch.data<-ldply(seq(0.9,1.1,length.out=5),function(c.stretch) 
+<div class="chunk" id="unnamed-chunk-68"><div class="rcode"><div class="source"><pre class="knitr r">stretch.data<-ldply(seq(0.9,1.1,length.out=5),function(c.stretch) 
   cbind(many.grid(c.pts,trans.fun=function(in.df) stretch.fun(c.stretch,in.df)),stretch=c.stretch))
 
 ggplot(melt(stretch.data,id.vars=c("stretch")),aes(x=stretch,y=value))+
@@ -2934,13 +2953,13 @@ ggplot(melt(stretch.data,id.vars=c("stretch")),aes(x=stretch,y=value))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-67.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-68.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Shearing</h1>
 
-<div class="chunk" id="unnamed-chunk-68"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Shear"),
+<div class="chunk" id="unnamed-chunk-69"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Shear"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) shear.fun(-0.5,in.df)),system="Reverse Shear"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) shear.fun(0.5,in.df)),system="Shear")
                 )
@@ -2952,13 +2971,13 @@ ggplot(melt(comp.sim),aes(x=value,color=system))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-68.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-69.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Shearing Sensitivity</h1>
 
-<div class="chunk" id="unnamed-chunk-69"><div class="rcode"><div class="source"><pre class="knitr r">shear.data<-ldply(seq(0,0.2,length.out=5),function(c.shear) 
+<div class="chunk" id="unnamed-chunk-70"><div class="rcode"><div class="source"><pre class="knitr r">shear.data<-ldply(seq(0,0.2,length.out=5),function(c.shear) 
   cbind(many.grid(c.pts,trans.fun=function(in.df) shear.fun(c.shear,in.df)),shear=c.shear))
 
 ggplot(melt(shear.data,id.vars=c("shear")),aes(x=shear,y=value))+
@@ -2969,13 +2988,13 @@ ggplot(melt(shear.data,id.vars=c("shear")),aes(x=shear,y=value))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-69.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-70.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Swirling</h1>
 
-<div class="chunk" id="unnamed-chunk-70"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Swirl"),
+<div class="chunk" id="unnamed-chunk-71"><div class="rcode"><div class="source"><pre class="knitr r">comp.sim<-rbind(cbind(many.grid(c.pts),system="No Swirl"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) swirl.fun(0.5,in.df)),system="Some Swirl"),
                 cbind(many.grid(c.pts,trans.fun=function(in.df) swirl.fun(2,in.df)),system="Tons of Swirl")
                 )
@@ -2987,13 +3006,13 @@ ggplot(melt(comp.sim),aes(x=value,color=system))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-70.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-71.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
 <h1>Swirling Sensitivity</h1>
 
-<div class="chunk" id="unnamed-chunk-71"><div class="rcode"><div class="source"><pre class="knitr r">swirl.data<-ldply(seq(0,0.2,length.out=5),function(c.swirl) 
+<div class="chunk" id="unnamed-chunk-72"><div class="rcode"><div class="source"><pre class="knitr r">swirl.data<-ldply(seq(0,0.2,length.out=5),function(c.swirl) 
   cbind(many.grid(c.pts,trans.fun=function(in.df) shear.fun(c.swirl,in.df)),swirl=c.swirl))
 
 ggplot(melt(swirl.data,id.vars=c("swirl")),aes(x=swirl,y=value))+
@@ -3004,7 +3023,7 @@ ggplot(melt(swirl.data,id.vars=c("swirl")),aes(x=swirl,y=value))+
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-71.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-72.png" title="Maximum Stretch" alt="Maximum Stretch" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -3121,12 +3140,12 @@ The principal components tell us about the orientation of the object and the sco
 
 <ul>
 <li>Indicates the pancakeness of the distribution</li>
-<li>Oblate means it is very closely spaced in 2 directions and far in the other
+<li>Oblate means it is very closely spaced in one direction and far in the other two
 
 <ul>
 <li>strand-like structure</li>
 </ul></li>
-<li>Prolate means it is close in one direction and far in the other 2
+<li>Prolate means it is close in two directions and far in the other
 
 <ul>
 <li>sheet-like structure</li>
@@ -3137,7 +3156,7 @@ The principal components tell us about the orientation of the object and the sco
 
 <p>The shape tensor provides for each object 3 possible orientations (each of the eigenvectors). </p>
 
-<div class="chunk" id="unnamed-chunk-72"><div class="rcode"><div class="source"><pre class="knitr r">opt.maker<-function(n.pts,rn.fun=function(pts) runif(pts,min=0,max=1),th.amp=0,...) {
+<div class="chunk" id="unnamed-chunk-73"><div class="rcode"><div class="source"><pre class="knitr r">opt.maker<-function(n.pts,rn.fun=function(pts) runif(pts,min=0,max=1),th.amp=0,...) {
   th.val<-runif(n.pts,min=-th.amp,max=th.amp)+pi*round(runif(n.pts))
   data.frame(x=rn.fun(n.pts),y=rn.fun(n.pts),
              xv=cos(th.val),yv=sin(th.val),
@@ -3156,7 +3175,7 @@ ggplot(or.data,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-72.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-73.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -3164,7 +3183,7 @@ ggplot(or.data,
 
 <p>As we saw in earlier plots it is difficult to express this information in point or graph format</p>
 
-<div class="chunk" id="unnamed-chunk-73"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(or.data,
+<div class="chunk" id="unnamed-chunk-74"><div class="rcode"><div class="source"><pre class="knitr r">ggplot(or.data,
        aes(x=0,y=0,xend=xv,yend=yv))+
     geom_density2d(aes(x=xv,y=yv),color="red",alpha=0.7)+
   geom_segment(arrow=arrow(length = unit(0.3,"cm")))+
@@ -3174,7 +3193,7 @@ ggplot(or.data,
   theme_bw(20)
 </pre></div>
 
-<div class="rimage center"><img src="print_figures/unnamed-chunk-73.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
+<div class="rimage center"><img src="print_figures/unnamed-chunk-74.png" title="Grid Nearest Neighbor" alt="Grid Nearest Neighbor" class="plot" /></div>
 
 <p></div></div></p>
 
@@ -3207,8 +3226,6 @@ ggplot(or.data,
 <p><img src="ext-figures/AlignmentTensor.png" alt="Alignemnt Tensor"/></p>
 
 <h1>Other Approaches</h1>
-
-<p>type:alert</p>
 
 <h3>K-Means</h3>
 
