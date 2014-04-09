@@ -25,7 +25,7 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
 - 10th April -  Statistics and Reproducibility
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Statistics.html)
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/8-Statistics_files/printable.html) as PDF (not yet)
- - 17th April - Dynamic Experiments
+- 17th April - Dynamic Experiments
 - 8th May - Big Data
 - 15th May - Guest Lecture - Applications in Material Science
 - 22th May - Project Presentations
