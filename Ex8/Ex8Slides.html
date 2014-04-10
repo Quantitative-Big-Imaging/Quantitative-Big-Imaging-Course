@@ -963,7 +963,8 @@ So we have a macro which runs once, how can we modify it to perform a Parameter 
 
 <p>Read in the data</p>
 
-<pre><code class="r">require(&quot;plyr&quot;,&quot;ggplot2&quot;)
+<pre><code class="r">library(&quot;plyr&quot;)
+library(&quot;ggplot2&quot;)
 # get the threshold from the file name (thresh.loc means 4th spot by _ in the name)
 thresh.from.filename&lt;-function(in.name,thresh.loc=4) {
   last.name&lt;-sub(&quot;^([^.]*).*&quot;, &quot;\\1&quot;, basename(in.name))
@@ -1354,7 +1355,8 @@ ggplot(summary.table,aes(x=threshold,y=mean.intensity))+
 <div class="slideContent" >
 <p>Read in the data</p>
 
-<pre><code class="r">require(&quot;plyr&quot;,&quot;ggplot2&quot;)
+<pre><code class="r">library(&quot;plyr&quot;)
+library(&quot;ggplot2&quot;)
 # get the parameters from the file name (parm.loc means 4th spot by _ in the name)
 parm.from.filename&lt;-function(in.name,parm.loc=4) {
   last.name&lt;-sub(&quot;^([^.]*).*&quot;, &quot;\\1&quot;, basename(in.name))
@@ -1517,7 +1519,8 @@ ggplot(summary.table,aes(x=threshold,y=mean.intensity,color=filter.name))+
 <section data-transition="default" data-transition-speed="default">
 <h3>Loading Direct Histogram Data</h3>
 <div class="slideContent" >
-<pre><code class="r">require(&quot;plyr&quot;,&quot;ggplot2&quot;)
+<pre><code class="r">library(&quot;plyr&quot;)
+library(&quot;ggplot2&quot;)
 thick.results&lt;-read.csv(file.path(Sys.getenv(&quot;HOME&quot;),&quot;blobthk_analysis.txt&quot;))
 # add a column for filter name
 thick.results$filter.name&lt;-
@@ -1560,7 +1563,8 @@ thick.results$filter.name&lt;-
 <section data-transition="default" data-transition-speed="default">
 <h3>Create a Summary Table</h3>
 <div class="slideContent" >
-<pre><code class="r">require(&quot;plyr&quot;,&quot;ggplot2&quot;)
+<pre><code class="r">library(&quot;plyr&quot;)
+library(&quot;ggplot2&quot;)
 smthk.func&lt;-function(in.df) { # code to apply to each
     data.frame(vox.count=sum(in.df$Voxel),
                mean.thickness=sum(in.df$Thickness*in.df$Voxel)/sum(in.df$Voxel),
