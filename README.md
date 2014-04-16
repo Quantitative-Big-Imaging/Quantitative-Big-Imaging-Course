@@ -26,6 +26,7 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Statistics.html)
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Statistics_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Statistics.pdf)
 - 17th April - Dynamic Experiments
+ - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Dynamic.html)
 - 8th May - Big Data
 - 15th May - Guest Lecture - Applications in Material Science
 - 22th May - Project Presentations
@@ -65,6 +66,8 @@ The exercises are based on the lectures and take place in the same room after th
 - 10th April -  Statistics and Reproducibility
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex8/Ex8Slides.html)
 - 17th April - Dynamic Experiments
+ - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex9/Ex9Slides.html)
+ - [Test Images](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex9/)
 - 8th May - Big Data
 - 15th May - Guest Lecture - Applications in Material Science
 - 22th May - Project Presentations
