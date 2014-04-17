@@ -27,7 +27,7 @@ The lectures have been prepared and given by Kevin Mader, Anders Kaestner, Marco
  - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Statistics_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Statistics.pdf)
 - 17th April - Dynamic Experiments
  - [Lecture Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/09-Dynamic.html)
- - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/08-Dynamic_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/09-Dynamic.pdf)
+ - [Lecture Handout](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/09-Dynamic_files/printable.html) as [PDF](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Lectures/09-Dynamic.pdf)
 - 8th May - Scaling Up / Big Data
 - 15th May - Guest Lecture - Applications in Material Science
 - 22th May - Project Presentations
