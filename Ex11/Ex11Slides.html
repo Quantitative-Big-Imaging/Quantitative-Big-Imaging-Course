@@ -783,17 +783,10 @@ hljs.initHighlightingOnLoad();
   <div class="reveal">
   <div class="slides">
 
-<section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>Quantitative Big Imaging </h1><p></p>
+<section data-state="section" data-transition="default" data-transition-speed="default">
+<h1>Quantitative Big Imaging </h1><p>Maria Büchner<br/>15 May 2014</p>
 
 <div class="slideContent" >
-<p>author: Kevin Mader, Maria Büchner
-date: 17 April 2014
-width: 1440
-height: 900
-css: ../template.css
-transition: rotate</p>
-
 <p>ETHZ: 227-0966-00L</p>
 
 <h1>Guest Lecture</h1>
@@ -805,21 +798,18 @@ transition: rotate</p>
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Tools for the Exercise</h3>
 <div class="slideContent" >
 <ul>
-<li>Matlab for Image Processing and Analysis
-
-<ul>
+<li>Matlab for Image Processing and Analysis</li>
 <li>Image Processing Toolbox</li>
-</ul></li>
 </ul>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Objectives</h3>
 <div class="slideContent" >
 <ol>
@@ -831,38 +821,54 @@ transition: rotate</p>
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Links</h3>
 <div class="slideContent" >
 <ul>
 <li><a href="http://onlinelibrary.wiley.com/doi/10.1002/aenm.201200932/abstract">Original Paper</a></li>
 <li><a href="http://onlinelibrary.wiley.com/store/10.1002/aenm.201200932/asset/supinfo/aenm_201200932_sm_suppl.pdf?v=1&amp;s=1faf6fbae93f267d0be80aab4eeda9d70edf2ac3">Supplementary Material</a></li>
-<li><a href="http://dx.doi.org/10.5905/ethz-iis-1">Data</a>
-
-<ul>
+<li><a href="http://dx.doi.org/10.5905/ethz-iis-1">Data</a></li>
 <li><a href="http://data-archive.ethz.ch/delivery/DeliveryManagerServlet?dps_pid=IE105518&amp;dps_custom_att_1=staff&amp;change_lng=&amp;">First Dataset</a></li>
-</ul></li>
 </ul>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Setup Instructions</h3>
+<section data-transition="default" data-transition-speed="default">
+<h3>Setting up MIJI</h3>
 <div class="slideContent" >
-<ol>
-<li>Download the first binary dataset (we won&#39;t worry about thresholding now)</li>
-<li>Decompress the data into the scratch drive
-<code>{bash}
-cd /scratch/
-tar -xvf ~/Downloads/binarized.tar
-</code></li>
-</ol>
+<p>In Matlab run the following code
+<a href="https://gist.github.com/kmader/9503137#file-download-and-setup">Copy / Paste from Here</a></p>
+
+<pre><code class="matlab">cd(&#39;~&#39;)
+unzip(&#39;http://jenkins.imagej.net/job/Stable-Fiji/lastSuccessfulBuild/artifact/fiji-nojre.zip&#39;,&#39;./&#39;)
+
+addpath &#39;Fiji.app/scripts&#39;
+Miji % start Miji
+cd(&#39;~&#39;)
+% to test if it works
+% Miji_Test
+</code></pre>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
+<h3>Assignment Setup Instructions</h3>
+<div class="slideContent" >
+<ol>
+<li>Download the first binary dataset (we won&#39;t worry about thresholding now)</li>
+<li>Decompress the data into the scratch drive</li>
+</ol>
+
+<pre><code class="bash">cd /scratch/
+tar -xvf ~/Downloads/binarized.tar
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
 <h3>Analysis Instructions</h3>
 <div class="slideContent" >
 <ul>
@@ -885,6 +891,20 @@ tar -xvf ~/Downloads/binarized.tar
 <li>For these data which approach is better</li>
 </ul></li>
 </ol>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="default">
+<h3>Importing Data into Fiji</h3>
+<div class="slideContent" >
+<p>Once the data is loaded you can import the segmentation or distance map into Fiji by using MIJI. Since we have already started MIJI earlier we only need to create an image from out Matlab array. We format it as an unsigned 16-bit integer since it is a label (distance map we would then format as a double)</p>
+
+<pre><code class="matlab">%% Load Slices into Fiji
+MIJ.createImage(&#39;Watershed&#39;,uint16(cWS),true);
+</code></pre>
+
+<p>You will need to adjust the brightness and contrast to see the properly labeled images</p>
 
 </div>
 
@@ -940,11 +960,11 @@ function commandsForSlide(indexh) {
       rollingLinks: false,
       
       theme: 'simple', 
-      transition: 'linear',
+      transition: 'default',
       transitionSpeed: 'default',
       rtl: false,
-      width: 960,
-      height: 700,
+      width: 1440,
+      height: 900,
     
       dependencies: []
     });
