@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practice Exam Questions</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Practice Exam Questions">
+  <meta name="author" content="Kevin Mader">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/solarized_light.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Practice Exam Questions</h1>
+    <h2>Quantitative Big Imaging</h2>
+    <p>Kevin Mader<br/></p>
+  </hgroup>
+    <a href="https://github.com/kmader/Quantitative-Big-Imaging-Course/zipball/gh-pages" class="example">
+     Download
+    </a>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Practice Exam</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The practice exam is <strong>not</strong> a real exam, but covers some (<strong>not all</strong>) of the concepts and questions that might be covered by the real exam (which is oral). If you have done a project some (0-50%) of the images or histograms will come from your project slides instead of random samples as it is now. The exam will generally <strong>not</strong> be multiple choice! </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Choosing a threshold</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="pres_figures/unnamed-chunk-1.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Based just on the distribution above which value would make the most sense for the threshold</p>
+
+<ol>
+<li>0.5</li>
+<li><em>1.0</em></li>
+<li>1.75</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-explanation">
+  <p>The value 1.0 lies best between the two peaks of the distribution</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Image Enhancement Speckled</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="pres_figures/noisycross.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Given the following measured image of a sample of a cross, which filter would you expect to work best?</p>
+
+<ol>
+<li><em>Median</em></li>
+<li>Gaussian / Low Pass</li>
+<li>Edge Detection / High Pass</li>
+<li>Diffusion</li>
+<li>Other (Explain)</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Think about what separates the image from the noise. Are they independent? Are the surrounding pixels a good approximation for the image?</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>A median filter is the best choice since the noise is randomly distributed and strong in intensity (easily distinguishable from the image). Using the other filters would spread or <em>blur</em> it out (since they are linear) when it needs to be removed from the data and that requires a non-linear filter.</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Image Enhancement Blurry</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="pres_figures/blurrycross.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Given the following measured image of a sample of a cross, which filter would you expect to work best?</p>
+
+<ol>
+<li>Median</li>
+<li>Gaussian / Low Pass</li>
+<li><em>Edge Detection / High Pass</em></li>
+<li>Diffusion</li>
+<li>Other (Explain)</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Think about what separates the image from the noise. Are they independent? Are the surrounding pixels a good approximation for the image?</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>A high pass (or edge-detecting, also called sharpening) filter would be best suited for this image since there is no random or speckle noise, instead just a blurred out version of the image (as if the microscope were not focused correctly). Since we see that the blurring only occurs in the x direction, the filter could be further optimized by using a kernel / neighborhood that took this into account rather than performing edge detection in all directions.</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Image Enhancement Background</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="pres_figures/evennoisycross.png" title="Test it" alt="Test it" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Given the following measured image of a sample of a cross, which filter would you expect to work best?</p>
+
+<ol>
+<li>Median</li>
+<li><em>Gaussian / Low Pass</em></li>
+<li>Edge Detection / High Pass</li>
+<li>Diffusion</li>
+<li>Other (Explain)</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Think about what separates the image from the noise. Are they independent? Are the surrounding pixels a good approximation for the image?</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>A low pass (or specifically Gaussian) filter would be best for these images since the noise is evenly distributed and not limited to single bad pixels. The underlying assumption allowing us to use this filter is that the neighborhood collectively proivdes a estimate of the value than any single pixel. </p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Image Enhancement Challenging Question</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="pres_figures/spikecross.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Given the following measured image of a sample of a cross, which filter would you expect to work best?</p>
+
+<ol>
+<li>Median</li>
+<li>Gaussian / Low Pass</li>
+<li>Edge Detection / High Pass</li>
+<li>Diffusion</li>
+<li><em>Other (Explain)</em></li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Think about what separates the image from the noise. Are they independent? Are the surrounding pixels a good approximation for the image?</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>The best option for this image is other, since non of the listed filters account for the type of artifcats present in the image. The best filter would be a cut-off which ignored all values above 1.5 since they are all noise (and the variation in the signal portion is very small). While a median filter would work well, it is very general and might distort some of the smaller features. A low-pass would blur out the spikes over many pixels making them even more difficult to remove.</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Morphological Operations</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="pres_figures/unnamed-chunk-2.png" title="Cortical Segment Morphology" alt="Cortical Segment Morphology" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Looking at the before and after images, which morphological operation was most-likely performed and what was the range</p>
+
+<ol>
+<li>Erosion, Small Window</li>
+<li>Dilation, Small Window</li>
+<li>Opening, Small Window</li>
+<li>Closing, Small Window</li>
+<li>Erosion, Large Window</li>
+<li>Dilation, Large Window</li>
+<li>Opening, Large Window</li>
+<li><em>Closing, Large Window</em></li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Pay attention to the edges of the image and the size of the features inside</p>
+
+</div>
+<div class="quiz-explanation">
+  <h3>Kernel Shape</h3>
+
+<p>The operation can be seen by looking at the inside and edges. Since the inside is filled in, it must be either dilation or closing (the other operations typically only remove pixels). By examining the edges and seeing that the structure does not grow we can determine it is closing (dilation would have caused the borders to grow).</p>
+
+<h3>Neighborhood</h3>
+
+<p>The size or neighborhood can be guessed by looking at the size of the holes filled which are clearly much larger than 3 pixels.</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Segmentation Strategy</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p>You measure the same cross 4 times and and get the following images as output. Estimate the signal to noise in the images and provide a strategy for how the data could be filtered and segmented.</p>
+
+<p><img src="pres_figures/unnamed-chunk-3.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    
+    <textarea rows="5" style="width:95%" class='submitCompare'
+      placeholder='Type your answer (at least 140 characters)'>
+</textarea>
+    <a class='btn btn-success submitCompare' data-title=''>
+      Submit and Compare
+    </a>
+    <a class='btn btn-danger clearSubmitCompare'>Clear</a>
+    <div class="explanation" style="display:none;">
+      <p>The signal to noise ratios for the image are very high (&gt;3) in 1 and 4,  reasonable in 2, and completely unusable in 4. The images in 1,2 and 4 can be processed using a Gaussian filter and threshold while might have a tiny bit of information but would need to be heavily filtered and interpreted carefully. It is easiest therefore, to examine the histograms of the images first where 3 has a much broader peak (higher standard deviation) indicating it is noisier and skipping this image in the first place.</p>
+
+    </div>
+    <div class="hint" style="display:none;">
+      <p>See Enhancement and Segmentation, you do not need to keep all of the data.</p>
+
+    </div>
+  </div>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Automatic Thresholds</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Which is the best reason to use automatic threshold techniques on data</p>
+
+<ol>
+<li>Reduce noise</li>
+<li><em>Compensate for changing illumination</em></li>
+<li>Improve signal to noise ratio</li>
+<li>Segment difficult to separate phases</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>Check the &quot;Where segmentation fails&quot; slide</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>Changing illumination will change the brightness of the pixels in the image but should not largely change their statistics or distribution making them ideal candidates for automated methods.
+<img src="pres_figures/unnamed-chunk-4.png" title="Varying Illumination Images" alt="Varying Illumination Images" style="display: block; margin: auto;" /></p>
+
+<p><img src="pres_figures/unnamed-chunk-5.png" title="Varying Illumination Histograms" alt="Varying Illumination Histograms" style="display: block; margin: auto;" /></p>
+
+<p>Neither noise nor signal to noise ratio can be improved using automated segmentation. These are addressed soley in the &quot;Image Enhancement&quot; lecture of the course.
+While automatic techniques might make results more reliable in 4, difficult segmentations are just as difficult when using automated techniques</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Selecting a threshold technique</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="pres_figures/unnamed-chunk-6.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Based soley on the histogram above which automatic threshold technique is best suited?</p>
+
+<ol>
+<li><em>Intermodes</em></li>
+<li>Hysteresis Threshold</li>
+<li>K-Means</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-explanation">
+  <p>Intermodes works best since the two phases are well characterized wiht the modes of the system and since their does not appear to be any bias or skew the method taking the value between them would work best.</p>
+
+<h3>Wrong Answers</h3>
+
+<p>K-Means and Hysteresis might work as well but it is hard to know without seeing the image itself</p>
+
+</div>
+<div class="quiz-hint">
+  <p>See Advanced Segmentation Lecture</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Applying Thresholds</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p>Can a threshold be applied to this image? Why or why not?
+<img src="pres_figures/unnamed-chunk-7.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+<p><img src="pres_figures/unnamed-chunk-8.png" title="" alt="" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    
+    <textarea rows="5" style="width:95%" class='submitCompare'
+      placeholder='Type your answer (at least 140 characters)'>
+</textarea>
+    <a class='btn btn-success submitCompare' data-title=''>
+      Submit and Compare
+    </a>
+    <a class='btn btn-danger clearSubmitCompare'>Clear</a>
+    <div class="hint" style="display:none;">
+      <p>Try to divide the image into two regions cell and background</p>
+
+    </div>
+    <div class="explanation" style="display:none;">
+      <p>A threshold cannot be applied to the image because there is significant structure in the background. The first step is to correct this structure and then apply a threshold. If this is not possible edge enhancement filters can be applied to improve the image and make the different phases easier to distinguish.</p>
+
+    </div>
+  </div>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>K-Means Clustering</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Which statement best describes the limitations and shortcomings of using K-means clustering</p>
+
+<ol>
+<li>Since it is an iterative method it can take a long time to converge</li>
+<li><em>The random seed start locations can influence the final result and running the analysis multiple times often results in multiple different answers</em></li>
+<li>K-Means can only handle position information</li>
+<li>K-Means can only handle small imaging datasets</li>
+<li>K-Means is complicated and therefore not many programs support it.</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>Check the &quot;K-Means&quot; slides in the Advanced Segmentation presentation</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>The start locations for the clusters in K-means are random and in many situations the start locations greatly influence the final groups (local-minima problem). The issue can be alleviated by running K-means many times on the same dataset but when different data is used it is always possible that the resulting classification is very different. The best way around this is to use K-means to establish a standard set of segmentation or thresholding criteria and then apply these criteria (which are now fixed and not subject to random cluster locations) to the new datasets rather than K-means itself. </p>
+
+<h3>Wrong Answers</h3>
+
+<p>While K-means is iterative, it has been optimized and can run very quickly even on massive datasets. K-means has been implemented on systems where handle enormous datasets (much larger than ImageJ or Matlab) and given its vector space formulation can handle nearly any kind of information associated to each point. Every major math or programming tool has support for K-means (Matlab, Java, Python, Octave, R, Paraview, even Excel with an Add-In) and it is very easy to implement.</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Shape Analysis Anisotropy</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p>Explain what anisotropy means in reference to shape and explain why it might be useful when examining cells which are thought to be responsible for mechanosensation in bone?</p>
+
+<h3>Hint</h3>
+
+<p>The defitions of anisotropy is in the <em>Analyzing Single Objects</em> lecture and the mechanosensation requires you to think about how forces might interact with such a cell.</p>
+
+  </div>
+  <div class='span6'>
+    
+    <textarea rows="5" style="width:95%" class='submitCompare'
+      placeholder='Type your answer (at least 140 characters)'>
+</textarea>
+    <a class='btn btn-success submitCompare' data-title=''>
+      Submit and Compare
+    </a>
+    <a class='btn btn-danger clearSubmitCompare'>Clear</a>
+    <div class="explanation" style="display:none;">
+      <p>For shape anisotropy means that an object is not dimensioned the same in all directions: in some directions it is larger or stronger than others. Conversely an isotropic shape is the same in all directions (a circle or sphere). For cells responsible for mechanosensation in bone, an anisotropic shape is an indication of which direction the cell has the most sensitivity.</p>
+
+    </div>
+  </div>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Shape Analysis Validation</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p>Below is a segmented image of cells using two different thresholds. Each image is right in some ways (accurate cell shape and volume) and wrong in some ways (too many noise spots, etc)</p>
+
+<p><img src="pres_figures/cellshape.png" title="Threshold Comparison" alt="Threshold Comparison" style="display: block; margin: auto;" /></p>
+
+<p>How would you choose the best image and validate your method? What additional steps could be taken to further improve the segmented image?</p>
+
+  </div>
+  <div class='span6'>
+    
+    <textarea rows="5" style="width:95%" class='submitCompare'
+      placeholder='Type your answer (at least 140 characters)'>
+</textarea>
+    <a class='btn btn-success submitCompare' data-title=''>
+      Submit and Compare
+    </a>
+    <a class='btn btn-danger clearSubmitCompare'>Clear</a>
+    <div class="explanation" style="display:none;">
+      <p>To validate the image, you could do a number of different tests. The easist would be to manually identify the cells in the image and compare the manual identification to the segmentation. The best approach would be to analyze the same cells with another technique (fluorence imaging, protein screening) and compare the relevant metrics. In some cases this is cell positions, but a volume fraction or other ensemble values are also sufficient.
+To further improve the segmented images, a number of the approachs discussed in <em>Advanced Segmentation</em> could be used ranging from basic morphology (an open would remove single voxel noise) to component labeling with a minimum voxel count (anything small than 50 voxels is not a cell) to shape based criterian (only objects with anisotropy between 0.5 and 1 are cells)</p>
+
+    </div>
+  </div>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Distribution Analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p>Below is a plot of object center of volume coming from the result of segmentation and shape analysis. Is there any emergent pattern in the positioning of these cells? Are the positions randomly distributed? Which metrics might be useful for further characterizing the randomness?  </p>
+
+<p><img src="pres_figures/unnamed-chunk-9.png" title="All Cells" alt="All Cells" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    
+    <textarea rows="5" style="width:95%" class='submitCompare'
+      placeholder='Type your answer (at least 140 characters)'>
+</textarea>
+    <a class='btn btn-success submitCompare' data-title=''>
+      Submit and Compare
+    </a>
+    <a class='btn btn-danger clearSubmitCompare'>Clear</a>
+    <div class="explanation" style="display:none;">
+      <p>There is no evidently emergent pattern in the cell distribution and they appear to be more or less randomly placed. The randomness of the placement could be characterized by examining the self-avoiding factor (or clustering factor) of the system based on the nearest neighbor distance and the density of cells. </p>
+
+    </div>
+  </div>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Distribution Analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p>Below is a plot of object center of volume coming from the result of segmentation and shape analysis. Is there any emergent pattern in the positioning of these cells? Are the positions randomly distributed? Which metrics might be useful for further characterizing the randomness?  </p>
+
+<p><img src="pres_figures/unnamed-chunk-10.png" title="All Cells" alt="All Cells" style="display: block; margin: auto;" /></p>
+
+  </div>
+  <div class='span6'>
+    
+    <textarea rows="5" style="width:95%" class='submitCompare'
+      placeholder='Type your answer (at least 140 characters)'>
+</textarea>
+    <a class='btn btn-success submitCompare' data-title=''>
+      Submit and Compare
+    </a>
+    <a class='btn btn-danger clearSubmitCompare'>Clear</a>
+    <div class="explanation" style="display:none;">
+      <p>While the positions appear to be random, there is a pattern to the placement such that some regions are denser than others. The distribution of the placement could be characterized by examining the self-avoiding factor (or clustering factor) of the system based on the nearest neighbor distance and the density of cells. Furthermore the 2D (or 3D) characteristic could be investigated by calcuating the ensemble distribution tensor in different regions and comparing them. The ellipsoidal representation of this tensor will be smaller in the denser regions and larger in the sparser regions.</p>
+
+    </div>
+  </div>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Practice Exam'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Choosing a threshold'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Image Enhancement Speckled'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Image Enhancement Blurry'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Image Enhancement Background'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Image Enhancement Challenging Question'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Morphological Operations'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Segmentation Strategy'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Automatic Thresholds'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Selecting a threshold technique'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Applying Thresholds'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='K-Means Clustering'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Shape Analysis Anisotropy'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Shape Analysis Validation'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Distribution Analysis'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Distribution Analysis'>
+         16
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
