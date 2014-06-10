@@ -70,7 +70,7 @@ The exercises are based on the lectures and take place in the same room after th
 - 3rd April -  Spatial Distribution
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex7/Ex7Slides.html)
  - [Exercise Data](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex7/)
- - [Paraview Code](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex7/Paraview)
+ - [Paraview Code](https://github.com/kmader/Quantitative-Big-Imaging-Course/tree/master/Ex7/Paraview)
 - 10th April -  Statistics and Reproducibility
  - [Exercise Slides](https://rawgithub.com/kmader/Quantitative-Big-Imaging-Course/master/Ex8/Ex8Slides.html)
 - 17th April - Dynamic Experiments
